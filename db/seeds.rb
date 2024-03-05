@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
+UserTag.destroy_all
+User.destroy_all
 require 'csv'
+
 CSV.foreach('db/Annesodb.csv', headers: true, col_sep: ';') do |row|
+  p row
   user = User.create!(
     first_name: row['first_name'],
     last_name: row['last_name'],
@@ -81,3 +85,13 @@ CSV.foreach('db/Annesodb.csv', headers: true, col_sep: ';') do |row|
     UserTag.create!(user: user, tag: tag)
   end
 end
+
+audition = Audition.create!(
+  name: 'Casting 1',
+  description: 'Casting for a new fashion brand',
+  date: '2024-03-05',
+  user: User.first)
+  tag = Tag.find_or_create_by!(name: "hair_color", value: 'noir')
+  AuditionTag.create!(audition: audition, tag: tag, required: true)
+  tag = Tag.find_or_create_by!(name: "gender", value: 'H')
+  AuditionTag.create!(audition: audition, tag: tag, required: false)
