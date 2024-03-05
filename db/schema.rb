@@ -29,7 +29,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_05_145258) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.date "audition_date"
+    t.string "description"
+    t.date "date"
     t.index ["user_id"], name: "index_auditions_on_user_id"
   end
 
@@ -53,7 +54,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_05_145258) do
     t.string "first_name"
     t.string "last_name"
     t.string "password"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.string "social_link"
     t.string "address"
     t.string "language"
