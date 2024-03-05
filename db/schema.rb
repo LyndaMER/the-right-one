@@ -66,6 +66,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_05_135748) do
     t.datetime "remember_created_at"
     t.boolean "admin", default: false
     t.date "birth_date"
+    t.string "pola_face"
+    t.string "pola_3_4"
+    t.string "pola_silhouette"
+    t.string "pola_hands"
+    t.string "presentation_video"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
