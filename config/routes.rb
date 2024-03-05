@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   root to: 'pages#home'
   resources :users
-  resources :auditions
+  resources :auditions do
+    resources :artists, only: [:index]
+  end
   resources :tags
   resources :user_tags, only: [:create, :destroy]
   resources :audition_tags, only: [:create, :destroy]
