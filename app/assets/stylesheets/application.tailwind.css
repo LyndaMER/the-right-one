@@ -1,6 +1,5 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
 
 /*
 
@@ -11,3 +10,5 @@
 }
 
 */
+@import components/button;
+@tailwind utilities;
