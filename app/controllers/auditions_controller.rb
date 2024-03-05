@@ -6,6 +6,8 @@ class AuditionsController < ApplicationController
 
   def show
     @audition = Audition.find(params[:id])
+    data = ArtistsMatcherService.new(@audition).call
+    data.sort_by! { |user| user[:matching_percentage] }
     authorize @audition
   end
 
@@ -30,5 +32,4 @@ class AuditionsController < ApplicationController
     @audition.destroy
     redirect_to auditions_path, notice: 'Audition was successfully deleted.'
   end
-
 end
