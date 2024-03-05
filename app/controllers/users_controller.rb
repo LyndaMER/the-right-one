@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   def index
     @users = policy_scope(User)
     @users = User.all
@@ -19,7 +18,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     authorize @user
     if @user.save
-      redirect_to user_path(@user)
+      redirect_to user_path(@user), notice: 'User was successfully updated.'
     else
       render :new
     end
@@ -29,6 +28,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     authorize @user
     @user.destroy
-    redirect_to users_path
+    redirect_to users_path, notice: 'User was successfully deleted.'
   end
 end

@@ -1,0 +1,2 @@
+class AuditionTagsController < ApplicationController
+end
