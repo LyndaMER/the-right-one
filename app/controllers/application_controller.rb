@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
     elsif resource.admin?
       root_path
     else
-      artist_path(resource)
+      user_path(resource)
     end
   end
 
