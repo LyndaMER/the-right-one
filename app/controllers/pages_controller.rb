@@ -4,4 +4,7 @@ class PagesController < ApplicationController
   def home
     authorize current_user, policy_class: PagePolicy
   end
+
+  def design_system
+  end
 end
