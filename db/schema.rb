@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_05_145258) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_06_122636) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -67,7 +67,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_05_145258) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.boolean "admin", default: false
-    t.date "birth_date"
+    t.string "birth_date"
     t.string "pola_face"
     t.string "pola_3_4"
     t.string "pola_silhouette"
