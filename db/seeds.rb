@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+Tag.destroy_all
 UserTag.destroy_all
 User.destroy_all
 require 'csv'
@@ -23,7 +23,14 @@ CSV.foreach('db/Annesodb.csv', headers: true, col_sep: ';') do |row|
     pola_hands: row['pola_hands'],
     presentation_video: row['presentation_video']
   )
-
+  if row['birth_date'].present?
+    tag = Tag.find_or_create_by!(name: "age", value: user.age)
+    UserTag.create!(user: user, tag: tag)
+  end
+  if row['language'].present?
+    tag = Tag.find_or_create_by!(name: "language", value: row['language'])
+    UserTag.create!(user: user, tag: tag)
+  end
   if row['ethnicity_origins'].present?
     tag = Tag.find_or_create_by!(name: "ethnicity_origins", value: row['ethnicity_origins'])
     UserTag.create!(user: user, tag: tag)
@@ -94,4 +101,14 @@ audition = Audition.create!(
   tag = Tag.find_or_create_by!(name: "hair_color", value: 'noir')
   AuditionTag.create!(audition: audition, tag: tag, required: true)
   tag = Tag.find_or_create_by!(name: "gender", value: 'H')
+  AuditionTag.create!(audition: audition, tag: tag, required: true)
+  tag = Tag.find_or_create_by!(name: "shoes_size", value: '43')
+  AuditionTag.create!(audition: audition, tag: tag, required: false)
+  tag = Tag.find_or_create_by!(name: "drive_licence", value: 'true')
+  AuditionTag.create!(audition: audition, tag: tag, required: false)
+  tag = Tag.find_or_create_by!(name: "piercing", value: 'true')
+  AuditionTag.create!(audition: audition, tag: tag, required: false)
+  tag = Tag.find_or_create_by!(name: "language", value: 'français')
+  AuditionTag.create!(audition: audition, tag: tag, required: false)
+  tag = Tag.find_or_create_by!(name: "age", value: '25')
   AuditionTag.create!(audition: audition, tag: tag, required: false)

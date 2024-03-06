@@ -20,4 +20,3 @@ Rails.application.routes.draw do
   resources :user_tags, only: [:create, :destroy]
   resources :audition_tags, only: [:create, :destroy]
 end
-;
