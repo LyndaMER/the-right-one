@@ -36,11 +36,16 @@ class ApplicationPolicy
     false
   end
 
+  def user_is_admin?
+    user.present? && user.admin?
+  end
+
   class Scope
     def initialize(user, scope)
       @user = user
       @scope = scope
     end
+
 
     def resolve
       raise NotImplementedError, "You must define #resolve in #{self.class}"
