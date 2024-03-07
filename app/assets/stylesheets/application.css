@@ -55,3 +55,18 @@
   justify-content: center;
   width: 400px;
 }
+.filter-cards {
+  display: flex;
+  gap: 1rem;
+
+}
+.user-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: 100%;
+}
+
+.filters {
+  width: 200px;
+}
