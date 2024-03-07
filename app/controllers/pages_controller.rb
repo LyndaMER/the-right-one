@@ -9,4 +9,8 @@ class PagesController < ApplicationController
 
   def design_system
   end
+
+  def test
+
+  end
 end

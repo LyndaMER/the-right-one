@@ -71,22 +71,22 @@
       <div class="max-w-sm rounded overflow-hidden shadow-lg flex">
         <p><%= @users.count %></p>
         <button type="button" class="rounded-full bg-white px-3 py-1.5 text-sm font-semibold text-terracotta-600 shadow-sm ring-1 ring-inset ring-terracotta-600 hover:bg-terracotta-50">+ Ajouter un artiste</button>
-        <div data-controller="carousel" class="swiper-container">
-          <% @users.each do |user| %>
+        <div data-controller="carousel" class="swiper">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="swiper-item">
-                <div class="card bg-white p-4 rounded-lg">
-                  <img src="<%= user.pola_face %>" alt="Photo d'un artiste">
-                  <div>
-                    <%= user.first_name %> <%= user.last_name %>
-                    <%= user.address %>
-                    <%= user.birth_date %>
+            <% @users.each do |user| %>
+              <div class="swiper-slide">
+                <div class="swiper-item">
+                  <div class="card bg-white p-4 rounded-lg">
+                    <img src="<%= user.pola_face %>" alt="Photo d'un artiste">
+                    <div>
+                      <%= user.first_name %> <%= user.last_name %>
+                      <%= user.address %>
+                      <%= user.birth_date %>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <% end %>
+              <% end %>
           </div>
         </div>
       </div>
@@ -94,5 +94,5 @@
     </div>
   </div>
 </div>
-
+<h1 class="toto">toto</h1>
 <%= render "components/footer"%>

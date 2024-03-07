@@ -1,10 +1,40 @@
 <%= render "components/navbar" %>
 
-<%# div de l'index entier%>
+<%# Index entier%>
 <div>
-<h1>Artistes</h1>
-
-
+  <h1>Artistes</h1>
+    <button type="button" class="rounded-full bg-terracotta-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-terracotta-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-600">Button text</button>
+  <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
+    <%# Filtres %>
+    <div class="rounded overflow-hidden shadow-lg flex flex-col md:w-1/3">
+      <h2>Filtres</h2>
+      <ul>
+        <li>
+        </li>
+      </ul>
+    </div>
+    <%# Index des cards %>
+    <div class="rounded overflow-hidden shadow-lg flex flex-col md:flex-row md:w-2/3">
+      <div class="relative w-full md:w-1/2">
+          <% @users.each_with_index do |user, index| %>
+              <% if index < @users.length / 2 %>
+                  <div class="px-6 py-4 mb-4">
+                      <%= render "components/card" %>
+                  </div>
+              <% end %>
+          <% end %>
+      </div>
+      <div class="relative w-full md:w-1/2">
+          <% @users.each_with_index do |user, index| %>
+              <% if index >= @users.length / 2 %>
+                  <div class="px-6 py-4 mb-4">
+                      <%= render "components/card" %>
+                  </div>
+              <% end %>
+          <% end %>
+      </div>
+    </div>
+  </div>
 </div>
 
 <%= render "components/footer"%>
