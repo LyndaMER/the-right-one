@@ -1,0 +1,12 @@
+  <div class="card-body">
+    <h5 class="card-title">Tags requis</h5>
+    <ul class="list-group list-group-flush">
+      <% @artists.each do |artist| %>
+        <% artist.tags.each do |tag| %>
+          <% if tag.required %>
+            <li class="list-group-item"><%= tag.name %></li>
+          <% end %>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
