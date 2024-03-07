@@ -1,0 +1,19 @@
+<h1>Nom de l'audition : <%= @audition.name %></h1>
+
+<h3> Description de l'audition :</h3>
+<% if @audition.description.present? %>
+  <p><%= @audition.description %></p>
+<% else %>
+  <p>Aucune description disponible.</p>
+<% end %>
+
+<% unless @audition.tags.empty? %>
+  <h2>Critères de l'audition :</h2>
+  <ul>
+    <% @audition.tags.each do |tag| %>
+      <li><strong><%= tag.name %></strong>: <%= tag.value %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Aucun tag associé à cette audition.</p>
+<% end %>

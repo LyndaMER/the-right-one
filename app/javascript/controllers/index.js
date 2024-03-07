@@ -10,5 +10,12 @@ eagerLoadControllersFrom("controllers", application)
 // import { lazyLoadControllersFrom } from "@hotwired/stimulus-loading"
 // lazyLoadControllersFrom("controllers", application)
 
+<<<<<<< HEAD
 import Carousel from "stimulus-carousel";
 application.register("carousel", Carousel);
+=======
+
+
+const application = Application.start();
+application.register("tag", TagController);
+>>>>>>> 61aece3 (tmp)

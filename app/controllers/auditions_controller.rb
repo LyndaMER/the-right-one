@@ -13,13 +13,33 @@ class AuditionsController < ApplicationController
 
   def new
     @audition = Audition.new
+    if params[:required_tag_number]
+      params[:required_tag_number].to_i.times { @audition.audition_tags.build }
+    else
+      @audition.audition_tags.build
+    end
     authorize @audition
   end
 
   def create
     @audition = Audition.new(audition_params)
     authorize @audition
-    if @audition.save
+    @audition.user = current_user
+    if @audition.save!
+      params[:required_tags][:name].each_with_index do |tag_name, index|
+
+        value = params[:required_tags][:value][index.to_i]
+        puts "value: #{value}"
+        puts "tag_name: #{tag_name}"
+        tag = Tag.find_or_create_by(name: tag_name, value: value)
+        AuditionTag.create(audition: @audition, tag: tag, required: true)
+
+        params[:optional_tags][:name].each_with_index do |tag_name, index|
+          value = params[:optional_tags][:value][index.to_i]
+          tag = Tag.find_or_create_by(name: tag_name, value: value)
+          AuditionTag.create(audition: @audition, tag: tag, required: false)
+        end
+      end
       redirect_to audition_path(@audition), notice: 'Audition was successfully updated.'
     else
       render :new
@@ -31,5 +51,11 @@ class AuditionsController < ApplicationController
     authorize @audition
     @audition.destroy
     redirect_to auditions_path, notice: 'Audition was successfully deleted.'
+  end
+
+  private
+
+  def audition_params
+    params.require(:audition).permit(:name, :description, :date)
   end
 end

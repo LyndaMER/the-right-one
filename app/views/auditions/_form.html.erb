@@ -1,0 +1,42 @@
+<h1><%= @audition.name %></h1>
+<p><%= @audition.description %></p>
+
+<%= form_with model: @audition, remote: true, html: { class: 'new_audition', id: 'new_audition' } do |f| %>
+  <!-- Nom de l'audition -->
+  <%= f.label :name, "Nom de l'audition" %>
+  <%= f.text_field :name %>
+
+  <!-- Description de l'annonce -->
+  <%= f.label :description, "Description de l'annonce" %>
+  <%= f.text_area :description %>
+
+  <h3>Critères obligatoires</h3>
+  <div class="tag_fields">
+    <input type="text" name="required_tags[name][]">
+    <input type="text" name="required_tags[value][]">
+  </div>
+
+  <button type="button" data-action="click->tag#removeField">Supprimer</button>
+  <button type="button" data-action="click->tag#addField">Ajouter critère obligatoire</button>
+
+
+
+
+
+  <!-- Critères secondaires -->
+  <h3>Critères secondaires</h3>
+  <input type="text" name="optional_tags[name][]">
+  <input type="text" name="optional_tags[value][]">
+
+  <input type="text" name="optional_tags[name][]">
+  <input type="text" name="optional_tags[value][]">
+
+  <button type="button" data-action="click->tag#removeField">Supprimer</button>
+  <button type="button" data-action="click->tag#addField">Ajouter critère suplémentaire</button>
+
+  <!-- Submit -->
+  <%= f.submit "Enregistrer" %>
+
+<% end %>
+  <!-- Lien pour rediriger vers la page d'index après la création -->
+<%= link_to 'Retour à la liste des auditions', auditions_path %>
