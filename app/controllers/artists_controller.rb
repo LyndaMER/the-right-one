@@ -4,5 +4,6 @@ class ArtistsController < ApplicationController
   def index
     @audition = Audition.find(params[:audition_id])
     @artists = ArtistsMatcherService.new(@audition).call.uniq
+    # @tags = @artists.flat_map(&:tags).uniq
   end
 end
