@@ -1,19 +1,31 @@
-<h1>Nom de l'audition : <%= @audition.name %></h1>
+<h1><strong>Nom de l'audition : </strong><%= @audition.name %></h1>
 
-<h3> Description de l'audition :</h3>
+<h3><strong>Description de l'audition :</strong></h3>
 <% if @audition.description.present? %>
   <p><%= @audition.description %></p>
 <% else %>
   <p>Aucune description disponible.</p>
 <% end %>
 
-<% unless @audition.tags.empty? %>
-  <h2>Critères de l'audition :</h2>
+
+<% if @audition.audition_tags.present? %>
+  <h2>Critères obligatoires :</h2>
   <ul>
-    <% @audition.tags.each do |tag| %>
-      <li><strong><%= tag.name %></strong>: <%= tag.value %></li>
+    <% @audition.audition_tags.where(required: true).each do |audition_tag| %>
+      <li><strong><%= audition_tag.tag.name %></strong>: <%= audition_tag.tag.value %></li>
     <% end %>
   </ul>
 <% else %>
-  <p>Aucun tag associé à cette audition.</p>
+  <p>Aucun critère obligatoire associé à cette audition.</p>
+<% end %>
+
+<% if @audition.audition_tags.present? %>
+  <h2>Critères secondaires :</h2>
+  <ul>
+    <% @audition.audition_tags.where(required: false).each do |audition_tag| %>
+      <li><strong><%= audition_tag.tag.name %></strong>: <%= audition_tag.tag.value %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Aucun critère secondaire associé à cette audition.</p>
 <% end %>

@@ -25,20 +25,22 @@ class AuditionsController < ApplicationController
     @audition = Audition.new(audition_params)
     authorize @audition
     @audition.user = current_user
+
     if @audition.save!
       params[:required_tags][:name].each_with_index do |tag_name, index|
-
         value = params[:required_tags][:value][index.to_i]
         puts "value: #{value}"
         puts "tag_name: #{tag_name}"
+        next if value.empty?
         tag = Tag.find_or_create_by(name: tag_name, value: value)
         AuditionTag.create(audition: @audition, tag: tag, required: true)
+      end
 
-        params[:optional_tags][:name].each_with_index do |tag_name, index|
-          value = params[:optional_tags][:value][index.to_i]
-          tag = Tag.find_or_create_by(name: tag_name, value: value)
-          AuditionTag.create(audition: @audition, tag: tag, required: false)
-        end
+      params[:optional_tags][:name].each_with_index do |tag_name, index|
+        value = params[:optional_tags][:value][index.to_i]
+        next if value.empty?
+        tag = Tag.find_or_create_by(name: tag_name, value: value)
+        AuditionTag.create(audition: @audition, tag: tag, required: false)
       end
       redirect_to audition_path(@audition), notice: 'Audition was successfully updated.'
     else

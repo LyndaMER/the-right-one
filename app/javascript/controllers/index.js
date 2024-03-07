@@ -9,13 +9,3 @@ eagerLoadControllersFrom("controllers", application)
 // Lazy load controllers as they appear in the DOM (remember not to preload controllers in import map!)
 // import { lazyLoadControllersFrom } from "@hotwired/stimulus-loading"
 // lazyLoadControllersFrom("controllers", application)
-
-<<<<<<< HEAD
-import Carousel from "stimulus-carousel";
-application.register("carousel", Carousel);
-=======
-
-
-const application = Application.start();
-application.register("tag", TagController);
->>>>>>> 61aece3 (tmp)

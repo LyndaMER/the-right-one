@@ -1,16 +1,27 @@
-import { Controller } from "stimulus";
+import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-  static targets = ["tagfields"];
+  static targets = ["tagTemplate", "tagfields"];
+
+  connect() {
+    console.log("Tag controller connected");
+    this.addField();
+  }
 
   addField() {
-    const newField = this.tagFieldsTarget.lastElementChild.cloneNode(true);
-    newField.querySelectorAll("input").forEach((input) => (input.value = ""));
-    this.tagFieldsTarget.appendChild(newField);
+    const tagTemplate = this.tagTemplateTarget.cloneNode(true);
+    tagTemplate.classList.remove("hidden");
+
+    this.tagfieldsTarget.appendChild(tagTemplate);
   }
 
   removeField(event) {
-    const field = event.target.closest(".tag_fields");
-    field.parentNode.removeChild(field);
+    const tagField = event.target.closest(".tagfields");
+    if (this.tagfieldsTarget.children.length > 1) {
+      console.log("test i'm here");
+
+      this.tagfieldsTarget.lastElementChild.remove();
+    }
   }
+
 }
