@@ -1,0 +1,64 @@
+<%= render "components/navbar" %>
+
+<div>
+  <%# mettre les reponses du formulaire dans cette div%>
+  <div>
+    <div class="px-4 sm:px-0">
+      <h1 class="text-base font-semibold leading-7 text-gray-900"><%= user.first_name %> <%= user.last_name %></h3>
+      <button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500">Update</button>
+      <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">N'oubliez pas de mettre à jour vos informations !</p>
+    </div>
+    <div class="mt-6 border-t border-gray-100">
+      <dl class="divide-y divide-gray-100">
+        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="text-sm font-medium leading-6 text-gray-900">Numéro de téléphone</dt>
+          <dd class="mt-1 flex text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+            <span class="flex-grow"> </span>
+            <span class="ml-4 flex-shrink-0">
+              <button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500">Update</button>
+            </span>
+          </dd>
+        </div>
+        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="text-sm font-medium leading-6 text-gray-900">Adresse</dt>
+          <dd class="mt-1 flex text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+            <span class="flex-grow">Backend Developer</span>
+            <span class="ml-4 flex-shrink-0">
+              <button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500">Update</button>
+            </span>
+          </dd>
+        </div>
+        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="text-sm font-medium leading-6 text-gray-900">Langues parlées</dt>
+          <dd class="mt-1 flex text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+            <span class="flex-grow">margotfoster@example.com</span>
+            <span class="ml-4 flex-shrink-0">
+              <button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500">Update</button>
+            </span>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+
+  <%#card a droite%>
+  <div>
+  <%= render "components/card" %>
+  <%#ajouter deux boutons%>
+  </div>
+
+  <%#bouton et caroussel%>
+  <div>
+    <div>
+      <button type="button" class="rounded-full bg-terracotta-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-terracotta-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-600">Button text</button>
+    </div>
+
+    <%ajouter caroussel de tous les polas%>
+    <div>
+    </div>
+  </div>
+
+
+</div>
+
+<%= render "components/footer"%>
