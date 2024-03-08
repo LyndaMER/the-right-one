@@ -2,12 +2,17 @@ class AuditionsController < ApplicationController
   def index
     @auditions = policy_scope(Audition)
     @auditions = Audition.all
+    @matches = {}
+
+    @auditions.each do |audition|
+      matcher = ArtistsMatcherService.new(@audition)
+      @matches[@audition.id] = matcher.call
+      matches.sort_by! { |user| user[:matching_percentage] }
+    end
   end
 
   def show
     @audition = Audition.find(params[:id])
-    data = ArtistsMatcherService.new(@audition).call
-    data.sort_by! { |user| user[:matching_percentage] }
     authorize @audition
   end
 
