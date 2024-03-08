@@ -1,25 +1,16 @@
 <%= render "components/navbar" %>
 <%# Index entier%>
-<div>
+<div class="main-container">
   <div class="flex-auto w-32 m-8 mx-auto">
     <h1 class="text-4xl font-extrabold dark:text-black">Artistes</h1>
   </div>
-    <a href="/auditions/new" class="rounded-full bg-terracotta-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-terracotta-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-600">+ Ajouter un artiste</a>
+
+    <%= link_to"+ Ajouter un artiste", new_audition_path, class: "btn bg-brown" %>
+
   <div class="filter-cards">
-    <%# Filtres %>
-    <div class="filters">
-      <h2>Filtres</h2>
-      <ul>
-        <li>
-          age
-        </li>
-        <li>
-          taille
-        </li>
-      </ul>
-    </div>
+
     <%# Index des cards %>
-    <div class="user-cards">
+    <div class="user-cards"  >
       <% @users.each do |user| %>
         <%= render "components/card", user: user %>
       <% end %>

@@ -1,35 +1,48 @@
 <%= render "components/navbar" %>
 
 <div class= "main-container">
-  <h1 class="text-4xl font-extrabold dark:text-black">Nom de l'audition: <%= @audition.name %></h1>
-  <p class="text-2xl font-extrabold dark:text-black">Description de l'audition:</p>
-  <% if @audition.description.present? %>
-    <p><%= @audition.description %></p>
-  <% else %>
-    <p>Aucune description n'est disponible.</p>
-  <% end %>
-
-  <% if @audition.audition_tags.present? %>
-    <h2>Critères obligatoires:</h2>
-    <ul>
-      <% @audition.audition_tags.where(required: true).each do |audition_tag| %>
+<!---- Nom de l'audition ------->
+  <h1 class="text-4xl font-extrabold dark:text-black text-center mb-12 mt-6"><%= @audition.name %></h1>
+<!------  Description de l'audition --------->
+  <div class="mb-4">
+    <p class="text-2xl font-extrabold dark:text-black">Description de l'audition:</p>
+    <% if @audition.description.present? %>
+    <p class="ml-8"><%= @audition.description %></p>
+    <% else %>
+    <p class="italic text-gray-500">Aucune description n'est disponible.</p>
+    <% end %>
+  </div>
+<!-------- Critères obligatoire --------->
+    <% if @audition.audition_tags.present? %>
+    <div class="mb-4">
+      <h2>Critères obligatoires:</h2>
+      <ul>
+        <% @audition.audition_tags.where(required: true).each do |audition_tag| %>
         <li><strong><%= audition_tag.tag.name %></strong>: <%= audition_tag.tag.value %></li>
-      <% end %>
-    </ul>
-  <% else %>
-    <p>Aucun critère obligatoire n'est associé à cette audition.</p>
-  <% end %>
+        <% end %>
+      </ul>
+    </div>
 
-  <% if @audition.audition_tags.present? %>
-    <h2>Critères optionnels:</h2>
-    <ul>
+    <% else %>
+      <p class="italic text-gray-500">Aucun critère obligatoire associé à cette audition.</p>
+    <% end %>
+<!-------- Critères secondaires --------->
+    <% if @audition.audition_tags.present? %>
+    <div class="mb-4">
+      <h2>Critères optionnels:</h2>
+      <ul>
       <% @audition.audition_tags.where(required: false).each do |audition_tag| %>
-        <li><strong><%= audition_tag.tag.name %></strong>: <%= audition_tag.tag.value %></li>
+      <li><strong><%= audition_tag.tag.name %></strong>: <%= audition_tag.tag.value %></li>
       <% end %>
-    </ul>
-  <% else %>
-    <p>Aucun critère optionnel n'est associé à cette audition.</p>
-  <% end %>
+      </ul>
+    </div>
+
+    <% else %>
+      <p class="italic text-gray-500">Aucun critère secondaire associé à cette audition.</p>
+    <% end %>
+
+
+
 
   <%= link_to "Retour", auditions_path, class: 'text-blue-500 hover:text-blue-700' %>
   <%= link_to "Modifier", edit_audition_path(@audition), class: 'text-blue-500 hover:text-blue-700' %>

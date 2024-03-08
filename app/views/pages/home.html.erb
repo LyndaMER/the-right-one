@@ -42,16 +42,15 @@
             </li>
           <% end %>
         </ul>
-        <%= link_to "+ Ajouter une audition", new_audition_path, class:"rounded-full bg-terracotta-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-terracotta-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-600" %>      </div>
+        <%= link_to"+ Ajouter une audition", new_audition_path, class: "btn bg-brown" %>
       </div>
-    </div>
 
-  <div class="users">
-    <div class="users-container block bg-brown">
+    <div class="users">
+      <div class="users-container block bg-brown">
       <p><%= @users.count %> artists</p>
       <button type="button" class="rounded-full bg-white px-3 py-1.5 text-sm font-semibold text-terracotta-600 shadow-sm ring-1 ring-inset ring-terracotta-600 hover:bg-terracotta-50">+ Ajouter un artiste</button>
-    </div>
+      </div>
+     </div>
   </div>
-
 </div>
 <%= render "components/footer"%>
