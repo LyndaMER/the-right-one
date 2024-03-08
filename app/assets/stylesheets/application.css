@@ -14,16 +14,19 @@
  *= require_self
  */
 
+:root {
+  --brown: #962A1B;
+}
+
 .swiper {
-  margin-left: auto;
-  margin-right: auto;
   position: relative;
   overflow: hidden;
   list-style: none;
   padding: 0;
   z-index: 1;
   display: block;
-  max-width: 300px;
+  max-width: 444px;
+  height: 600px;
 }
 
 .swiper-wrapper {
@@ -49,12 +52,16 @@
   backface-visibility: hidden;
 }
 .swiper-item {
-  height: 16rem;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 400px;
 }
+
+.swiper-image {
+  border-radius: 8px;
+}
+
 .filter-cards {
   display: flex;
   gap: 1rem;
@@ -69,4 +76,53 @@
 
 .filters {
   width: 200px;
+}
+
+.audition-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #fef9f9;
+}
+
+.contain {
+  display: flex;
+  gap: 3rem;
+}
+
+.audition-users {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.block {
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  box-shadow: 2px 2px 10px #0000001b;
+}
+
+.bg-white {
+  background-color: white;
+}
+.bg-brown {
+  background-color: var(--brown);
+  color: white;
+}
+
+.btn {
+  padding: 12px 24px;
+  width: fit-content;
+  border-radius: 999px;
+}
+
+.btn.bg-brown {
+  color: white;
 }
