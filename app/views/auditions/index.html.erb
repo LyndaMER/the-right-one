@@ -1,7 +1,21 @@
 <%= render 'components/navbar' %>
 
-<!-- app/views/auditions/index.html.erb -->
+<div class="p-8 bg-gray-100">
+  <div class="uppercase tracking-wide text-2xl text-indigo-500 font-semibold mb-8">Liste des Auditions</div>
 
+  <% if @auditions.present? %>
+    <ul>
+      <% @auditions.each do |audition| %>
+        <li class="mb-4">
+          <h1 class="text-xl font-semibold mb-2"><%= link_to audition.name, audition_path(audition), class: 'text-blue-500 hover:text-blue-700' %></h1>
+          <!-- Ajoutez d'autres détails de l'audition selon vos besoins -->
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p class="text-gray-500">Aucune audition disponible.</p>
+  <% end %>
 
-
-<%= link_to "Ajouter une audition", new_audition_path, class: 'text-blue-500 hover:text-blue-700 ml-auto' %>
+  <%= link_to "Retour à la page d'accueil", root_path, class: 'text-blue-500 hover:text-blue-700 block mb-4' %>
+  <%= link_to "Ajouter une audition", new_audition_path, class: 'text-white bg-blue-500 hover:bg-blue-700 px-4 py-2 rounded-full inline-block' %>
+</div>

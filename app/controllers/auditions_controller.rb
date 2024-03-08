@@ -2,13 +2,8 @@ class AuditionsController < ApplicationController
 
   def index
     @auditions = policy_scope(Audition)
-    @matches = {}
+    @auditions = Audition.all
 
-    @auditions.each do |audition|
-      matcher = ArtistsMatcherService.new(audition)
-      @matches[audition.id] = matcher.call
-    end
-    @matches.each { |_, matches| matches.sort_by! { |match| match[:matching_percentage] }.reverse! }
   end
 
   def show
