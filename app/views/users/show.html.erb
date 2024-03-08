@@ -1,10 +1,20 @@
 <%= render "components/navbar" %>
 
+<%#card a droite%>
+
+<div class="flex-auto w-32 m-8 mx-auto">
+  <h1 class="text-4xl font-extrabold dark:text-black" style="white-space: nowrap;"><%= @user.first_name %> <%= @user.last_name %></h1>
+</div>
+
+<div>
+  <%= image_tag @user.pola_face if @user.pola_face %>
+  <%#ajouter deux boutons%>
+</div>
+
 <div>
   <%# mettre les reponses du formulaire dans cette div%>
   <div>
     <div class="px-4 sm:px-0">
-      <h1 class="text-base font-semibold leading-7 text-gray-900"><%= @user.first_name %> <%= @user.last_name %></h3>
       <button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500">Update</button>
       <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">N'oubliez pas de mettre à jour vos informations !</p>
     </div>
@@ -41,11 +51,6 @@
     </div>
   </div>
 
-  <%#card a droite%>
-  <div>
-  <%= render "components/card" %>
-  <%#ajouter deux boutons%>
-  </div>
 
   <%#bouton et caroussel%>
   <div>
