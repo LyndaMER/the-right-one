@@ -42,7 +42,8 @@
             </li>
           <% end %>
         </ul>
-        <a href="/auditions/new" class="btn bg-brown">+ Ajouter une audition</a>
+        <%= link_to"+ Ajouter une audition", new_audition_path, class: "btn bg-brown" %>
+
       </div>
       <div class="users-container block bg-brown">
         <p><%= @users.count %> artists</p>

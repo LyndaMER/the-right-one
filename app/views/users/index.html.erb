@@ -19,9 +19,11 @@
       </ul>
     </div>
     <%# Index des cards %>
-    <div class="user-cards">
+    <div class="user-cards"  >
       <% @users.each do |user| %>
+        <%= link_to user_path(user), class: "profile-link" do %>
         <%= render "components/card", user: user %>
+        <% end %>
       <% end %>
     </div>
   </div>
