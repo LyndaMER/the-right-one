@@ -8,7 +8,7 @@
   <div class="filter-cards">
     <%# Filtres %>
     <div class="filters">
-      <h2 >Filtres</h2>
+      <h2>Filtres</h2>
       <ul>
         <li>
           age
@@ -21,7 +21,7 @@
     <%# Index des cards %>
     <div class="user-cards">
       <% @users.each do |user| %>
-        <%= render "components/card" %>
+        <%= render "components/card", user: user %>
       <% end %>
     </div>
   </div>
