@@ -1,39 +1,51 @@
 <%= render "components/navbar" %>
 
-<h1><strong>Nom de l'audition : </strong><%= @audition.name %></h1>
+<div class="main-container ">
+<!---- Nom de l'audition ------->
+  <h1 class="text-4xl font-extrabold dark:text-black text-center mb-12 mt-6"><%= @audition.name %></h1>
 
-<h3><strong>Description de l'audition :</strong></h3>
-<% if @audition.description.present? %>
-  <p><%= @audition.description %></p>
-<% else %>
-  <p>Aucune description disponible.</p>
-<% end %>
-
-
-<% if @audition.audition_tags.present? %>
-  <h2>Critères obligatoires :</h2>
-  <ul>
-    <% @audition.audition_tags.where(required: true).each do |audition_tag| %>
-      <li><strong><%= audition_tag.tag.name %></strong>: <%= audition_tag.tag.value %></li>
+<!------  Description de l'audition --------->
+  <div class="mb-4">
+    <h3 class="text-lg font-bold">Description de l'audition :</h3>
+    <% if @audition.description.present? %>
+      <p class="ml-8"><%= @audition.description %></p>
+    <% else %>
+      <p class="italic text-gray-500">Aucune description disponible.</p>
     <% end %>
-  </ul>
-<% else %>
-  <p>Aucun critère obligatoire associé à cette audition.</p>
-<% end %>
+  </div>
 
-<% if @audition.audition_tags.present? %>
-  <h2>Critères secondaires :</h2>
-  <ul>
-    <% @audition.audition_tags.where(required: false).each do |audition_tag| %>
-      <li><strong><%= audition_tag.tag.name %></strong>: <%= audition_tag.tag.value %></li>
+
+<!-------- Critères obligatoire --------->
+    <% if @audition.audition_tags.present? %>
+    <div class="mb-4">
+      <h2 class="text-lg font-bold">Critères obligatoires :</h2>
+      <ul class="list-disc pl-4 ml-8">
+        <% @audition.audition_tags.where(required: true).each do |audition_tag| %>
+          <li><strong><%= audition_tag.tag.name %></strong>: <%= audition_tag.tag.value %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <% else %>
+      <p class="italic text-gray-500">Aucun critère obligatoire associé à cette audition.</p>
     <% end %>
-  </ul>
-<% else %>
-  <p>Aucun critère secondaire associé à cette audition.</p>
-<% end %>
 
-<%= link_to "Retour", auditions_path, class: 'text-blue-500 hover:text-blue-700' %>
-<%= link_to "Modifier", edit_audition_path(@audition), class: 'text-blue-500 hover:text-blue-700' %>
-<%= link_to "Supprimer", audition_path(@audition), method: :delete, data: { confirm: "Etes-vous sûr de vouloir supprimer cette audition ?" }, class: 'text-red-500 hover:text-red-700' %>
-<%= link_to "Ajouter une audition", new_audition_path, class: 'text-blue-500 hover:text-blue-700' %>
-<%# <%= link_to "soumettre", audition_artists_path  %>
+<!-------- Critères secondaires --------->
+    <% if @audition.audition_tags.present? %>
+    <div class="mb-4">
+      <h2 class="text-lg font-bold">Critères secondaires :</h2>
+      <ul class="list-disc pl-4 ml-8">
+        <% @audition.audition_tags.where(required: false).each do |audition_tag| %>
+          <li><strong><%= audition_tag.tag.name %></strong>: <%= audition_tag.tag.value %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% else %>
+      <p class="italic text-gray-500">Aucun critère secondaire associé à cette audition.</p>
+    <% end %>
+
+    <%= link_to "Retour", auditions_path, class: 'text-blue-500 hover:text-blue-700' %>
+    <%# <%= link_to "Modifier", edit_audition_path(@audition), class: 'text-blue-500 hover:text-blue-700' %>
+    <%# <%= link_to "Supprimer", audition_path(@audition), method: :delete, data: { confirm: "Etes-vous sûr de vouloir supprimer cette audition ?" }, class: 'text-red-500 hover:text-red-700' %>
+    <%= link_to "Ajouter une audition", new_audition_path, class: 'text-blue-500 hover:text-blue-700' %>
+</div>
