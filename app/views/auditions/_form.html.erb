@@ -20,7 +20,7 @@
     <div data-tag-target="tagfields">
       <div data-tag-target="tagTemplate" class="hidden">
         <!-- Select tags name -->
-        <%= select_tag "required_tags[name][]", options_for_select(available_tags), class: 'w-1/3 px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300 flex-row mr-2 mb-4'%>
+        <%= select_tag "required_tags[name][]", options_for_select(available_tags), class: 'w-1/2 px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300 flex-row mr-2 mb-4'%>
         <!-- Input tags value -->
         <input type="text" name="required_tags[value][]" class='w-1/3 px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300 flex-row mb-4'>
       </div>
@@ -39,7 +39,7 @@
     <div data-tag-target="tagfields">
       <div data-tag-target="tagTemplate" class="hidden">
         <!-- Select tags name -->
-        <%= select_tag "optional_tags[name][]", options_for_select(available_tags), class: 'w-1/3 px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300 flex-row mr-2 mb-4' %>
+        <%= select_tag "optional_tags[name][]", options_for_select(available_tags), class: 'w-1/2 px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300 flex-row mr-2 mb-4' %>
         <!-- Input tags value -->
         <input type="text" name="optional_tags[value][]" class='w-1/3 px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300 flex-row mb-4'>
       </div>
@@ -54,7 +54,7 @@
 
   <!-- Submit -->
   <div class="flex">
-  <%= f.submit "Enregistrer", class: 'rounded-full bg-terracotta-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-terracotta-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-600 mb-4 ml-auto'%>
+  <%= f.submit "Soumettre", class: 'rounded-full bg-terracotta-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-terracotta-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-600 mb-4 ml-auto'%>
   </div>
 <% end %>
 

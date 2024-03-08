@@ -1,18 +1,19 @@
 class AuditionsController < ApplicationController
+
   def index
     @auditions = policy_scope(Audition)
-    @auditions = Audition.all
     @matches = {}
 
     @auditions.each do |audition|
-      matcher = ArtistsMatcherService.new(@audition)
-      @matches[@audition.id] = matcher.call
-      matches.sort_by! { |user| user[:matching_percentage] }
+      matcher = ArtistsMatcherService.new(audition)
+      @matches[audition.id] = matcher.call
     end
+    @matches.each { |_, matches| matches.sort_by! { |match| match[:matching_percentage] }.reverse! }
   end
 
   def show
     @audition = Audition.find(params[:id])
+    @auditions = Audition.all
     authorize @audition
   end
 
@@ -47,7 +48,7 @@ class AuditionsController < ApplicationController
         tag = Tag.find_or_create_by(name: tag_name, value: value)
         AuditionTag.create(audition: @audition, tag: tag, required: false)
       end
-      redirect_to audition_path(@audition), notice: 'Audition was successfully updated.'
+      redirect_to audition_artists_path(@audition), notice: 'Audition was successfully updated.'
     else
       render :new
     end

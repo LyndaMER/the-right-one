@@ -48,19 +48,54 @@
   <div class="md:flex">
     <div class="md:flex-shrink-0">
     </div>
+
+    <!-------------------  les matches  ---------------->
     <div class="p-8">
       <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Matchs</div>
-      <p class="mt-2 text-gray-500">
-      <%= @audition.name %>
-      </p>
-      <%= @artists.count %>
-      <% @audition.tags.each do |tag| %>
-      <p><%= tag.name %></p>
-      <% end %>
+
+        <!---- le nombres d'artistes qui matches avec l'audition ----->
+        <h3 class="text-xl font-semibold"> le nombre d'artistes trouvés: <%= @artists.count %></h3>
+
+        <!---- l'audition ----->
+        <h1 class="text-3xl font-bold mt-4 mb-2">Nom de l'audition : <%= @audition.name %></h1>
+
+        <% if @audition.description.present? %>
+        <h3 class="text-lg font-semibold">Description de l'audition : </h3>
+          <p class="mb-4"><%= @audition.description %></p>
+        <% else %>
+          <p class="mb-4">Aucune description disponible.</p>
+        <% end %>
+
+
+          <!---------- les critères obligatoires de l'audition -------->
+        <% if @audition.audition_tags.present? %>
+          <h2 class="text-xl font-semibold mb-2">Critères obligatoires :</h2>
+          <ul>
+            <% @audition.audition_tags.where(required: true).each do |audition_tag| %>
+              <li class="mb-1"><strong><%= audition_tag.tag.name %></strong>: <%= audition_tag.tag.value %></li>
+            <% end %>
+          </ul>
+        <% else %>
+          <p class="mb-4">Aucun critère obligatoire associé à cette audition.</p>
+        <% end %>
+
+        <!---------- les critères secondaires de l'audition -------->
+        <% if @audition.audition_tags.present? %>
+          <h2 class="text-xl font-semibold mb-2">Critères secondaires :</h2>
+          <ul>
+            <% @audition.audition_tags.where(required: false).each do |audition_tag| %>
+              <li class="mb-1"><strong><%= audition_tag.tag.name %></strong>: <%= audition_tag.tag.value %></li>
+            <% end %>
+          </ul>
+        <% else %>
+          <p class="mb-4">Aucun critère secondaire associé à cette audition.</p>
+        <% end %>
+
+        <%= link_to "Retour", auditions_path, class: 'text-blue-500 hover:text-blue-700' %>
+        <%= link_to "Nouvelle audition", new_audition_path, class: 'text-blue-500 hover:text-blue-700' %>
+        <%# <%= link_to "Modifier", edit_audition_path(@audition), class: class: 'text-blue-500 hover:text-blue-700'%>
 
     </div>
   </div>
 </div>
   </div>
-
-</div>

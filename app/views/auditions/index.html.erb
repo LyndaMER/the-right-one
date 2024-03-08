@@ -2,22 +2,6 @@
 
 <!-- app/views/auditions/index.html.erb -->
 
-<h1>Auditions and Matches</h1>
-
-<% @auditions.each do |audition| %>
-  <div>
-    <h2><%= audition.name %></h2>
-    <!-- Affichez d'autres détails de l'audition selon vos besoins -->
-
-    <!-- Affichez les correspondances pour cette audition -->
-    <h3>Matches:</h3>
-    <% @matches[audition.id].each do |match| %>
-      <div>
-        <%= "User: #{match[:user].first_name} #{match[:user].last_name}, Matching Percentage: #{match[:matching_percentage]}%" %>
-      </div>
-    <% end %>
-  </div>
-<% end %>
 
 
 <%= link_to "Ajouter une audition", new_audition_path, class: 'text-blue-500 hover:text-blue-700 ml-auto' %>
