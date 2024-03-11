@@ -7,8 +7,10 @@ class CreateUsers < ActiveRecord::Migration[7.1]
       t.string :phone_number
       t.string :social_link
       t.string :address
-      t.string :language
-      t.string :link_portfolio
+      t.string :city
+      t.string :languages
+      t.string :portfolio
+      t.string :birth_date
 
       t.timestamps
     end

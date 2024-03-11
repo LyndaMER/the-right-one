@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_06_122636) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_05_145258) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -57,8 +57,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_06_122636) do
     t.string "phone_number"
     t.string "social_link"
     t.string "address"
-    t.string "language"
-    t.string "link_portfolio"
+    t.string "city"
+    t.string "languages"
+    t.string "portfolio"
+    t.string "birth_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
@@ -67,11 +69,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_06_122636) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.boolean "admin", default: false
-    t.string "birth_date"
     t.string "pola_face"
     t.string "pola_3_4"
     t.string "pola_silhouette"
-    t.string "pola_hands"
+    t.string "pola_mains"
     t.string "presentation_video"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

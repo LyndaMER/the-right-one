@@ -13,9 +13,7 @@
               <div class="block user-card">
                 <img src="<%= user.pola_face %>" alt="Photo d'un artiste" class="swiper-image picture">
                 <div>
-                  <%= user.first_name %> <%= user.last_name %>
-                  <%= user.address %>
-                  <%= user.birth_date %>
+                  <%= user.first_name %> <%= user.last_name %> -  <%= user.city %> - <%= user.age %> ans
                 </div>
               </div>
             </div>
@@ -44,9 +42,10 @@
         </ul>
         <%= link_to"+ Ajouter une audition", new_audition_path, class: "btn bg-brown" %>
       </div>
+      <%# Bloc des artistes %>
       <div class="users-container block bg-brown">
-        <p><%= @users.count %> artists</p>
-        <button type="button" class="rounded-full bg-white px-3 py-1.5 text-sm font-semibold text-terracotta-600 shadow-sm ring-1 ring-inset ring-terracotta-600 hover:bg-terracotta-50">+ Ajouter un artiste</button>
+        <p><%= @users.count %> artistes</p>
+        <%= link_to"+ Ajouter un artiste", new_user_path, class: "btn bg-white" %>
       </div>
     </div>
   </div>
