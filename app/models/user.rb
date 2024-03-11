@@ -33,9 +33,9 @@ class User < ApplicationRecord
   end
 
   def age()
-    if date_de_naissance.present?
+    if birth_date.present?
       now = Time.now.utc.to_date
-      dob = date_de_naissance.to_date
+      dob = birth_date.to_date
       age = now.year - dob.year
       # Réduire l'âge si l'anniversaire n'a pas encore eu lieu cette année
       age -= 1 if now < dob + age.years
