@@ -30,7 +30,7 @@
     <div data-tag-target="tagfields">
       <div data-tag-target="tagTemplate" class="hidden">
         <!-- Select tags name -->
-        <%= select_tag "required_tags[name][]", options_for_select(available_tags), class: 'w-1/2 px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300 flex-row mr-2 mb-4'%>
+        <%= select_tag "required_tags[name][]", options_for_select(available_tags), class: 'w-1/2 px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300 flex-row mr-2 mb-4', include_blank: true, placeholder: "Selectionner un critère"  %>
         <!-- Input tags value -->
         <input type="text" name="required_tags[value][]" class='w-1/3 px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300 flex-row mb-4'>
 
@@ -49,7 +49,7 @@
       <div data-tag-target="tagfields">
         <div data-tag-target="tagTemplate" class="hidden">
           <!-- Select tags name -->
-          <%= select_tag "optional_tags[name][]", options_for_select(available_tags), class: 'w-1/2 px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300 flex-row mr-2 mb-4' %>
+          <%= select_tag "optional_tags[name][]", options_for_select(available_tags), class: 'w-1/2 px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300 flex-row mr-2 mb-4', include_blank: true, placeholder: "Selectionner un critère" %>
           <!-- Input tags value -->
           <input type="text" name="optional_tags[value][]" class='w-1/3 px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300 flex-row mb-4'>
         </div>
