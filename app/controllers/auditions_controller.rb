@@ -43,7 +43,7 @@ class AuditionsController < ApplicationController
         tag = Tag.find_or_create_by(name: tag_name, value: value)
         AuditionTag.create(audition: @audition, tag: tag, required: false)
       end
-      redirect_to audition_artists_path(@audition), notice: 'Audition was successfully updated.'
+      redirect_to audition_artists_path(@audition), notice: "L'audition a bien été modifiée."
     else
       render :new
     end
@@ -53,7 +53,7 @@ class AuditionsController < ApplicationController
     @audition = Audition.find(params[:id])
     authorize @audition
     @audition.destroy
-    redirect_to auditions_path, notice: 'Audition was successfully deleted.'
+    redirect_to auditions_path, notice: "L'audition a bien été supprimée."
   end
 
   private

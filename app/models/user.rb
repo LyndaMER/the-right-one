@@ -8,34 +8,34 @@ class User < ApplicationRecord
   has_many :tags, through: :user_tags
   has_many :auditions, dependent: :destroy
 
-  def shoes_size
-    tags.find_by(name: 'shoes_size')&.value
+  def taille_chaussures
+    tags.find_by(name: 'taille_chaussures')&.value
   end
 
-  def hair_color
-    tags.find_by(name: 'hair_color')&.value
+  def couleur_cheveux
+    tags.find_by(name: 'couleur_cheveux')&.value
   end
 
-  def gender
-    tags.find_by(name: 'gender')&.value
+  def sexe
+    tags.find_by(name: 'sexe')&.value
   end
 
-  def drive_licence
-    tags.find_by(name: 'drive_licence')&.value
+  def permis_de_conduire
+    tags.find_by(name: 'permis_de_conduire')&.value
   end
 
   def piercing
     tags.find_by(name: 'piercing')&.value
   end
 
-  def language
-    tags.find_by(name: 'language')&.value
+  def langues
+    tags.find_by(name: 'langues')&.value
   end
 
   def age()
-    if birth_date.present?
+    if date_de_naissance.present?
       now = Time.now.utc.to_date
-      dob = birth_date.to_date
+      dob = date_de_naissance.to_date
       age = now.year - dob.year
       # Réduire l'âge si l'anniversaire n'a pas encore eu lieu cette année
       age -= 1 if now < dob + age.years
