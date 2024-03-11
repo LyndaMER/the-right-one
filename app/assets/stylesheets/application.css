@@ -100,6 +100,26 @@
   padding: 1rem 8rem;
   background-color: #faf5f0;
 }
+.match-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: white;
+  position:sticky;
+  top: 0;
+  border-radius: 5px;
+  max-height: 100vh;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #faf5f0;
+  grid: 2px;
+}
 /* gap entre les cards */
 .contain {
   display: flex;
@@ -159,7 +179,6 @@
   color: black;
   border-radius: 10px;
   box-shadow: 2px 2px 10px #0000001b;
-  ;
 }
 
 /* titre en gras sur les cards */
@@ -197,11 +216,13 @@
 /* conteneur du formulaire */
 .form-container{
   display: flex;
-  padding: 1rem 2rem;
-  border-radius: 10px;
+  padding: 3rem 2rem;
+  border-radius: 20px;
   box-shadow: 2px 2px 10px #0000001b;
   background-color: white;
   width: 900px;
+  flex-grow: 1;
+  margin-top: 10px;
 
 }
 
@@ -211,9 +232,21 @@
   align-items: center;
   gap: 1rem;
 }
+
+.form-flex{
+  flex-grow: 1;
+}
+.main-match-container{
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #faf5f0;
+  width: 100%;
+  
 .new-audition {
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 50%);
+
 }
