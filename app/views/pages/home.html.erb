@@ -10,8 +10,8 @@
         <% @users.each do |user| %>
           <div class="swiper-slide">
             <div class="swiper-item">
-              <div class="block">
-                <img src="<%= user.pola_face %>" alt="Photo d'un artiste" class="swiper-image">
+              <div class="block user-card">
+                <img src="<%= user.pola_face %>" alt="Photo d'un artiste" class="swiper-image picture">
                 <div>
                   <%= user.prenom %> <%= user.nom %>
                   <%= user.adresse %>
@@ -44,13 +44,11 @@
         </ul>
         <%= link_to"+ Ajouter une audition", new_audition_path, class: "btn bg-brown" %>
       </div>
-
-    <div class="users">
       <div class="users-container block bg-brown">
-      <p><%= @users.count %> artists</p>
-      <button type="button" class="rounded-full bg-white px-3 py-1.5 text-sm font-semibold text-terracotta-600 shadow-sm ring-1 ring-inset ring-terracotta-600 hover:bg-terracotta-50">+ Ajouter un artiste</button>
+        <p><%= @users.count %> artists</p>
+        <button type="button" class="rounded-full bg-white px-3 py-1.5 text-sm font-semibold text-terracotta-600 shadow-sm ring-1 ring-inset ring-terracotta-600 hover:bg-terracotta-50">+ Ajouter un artiste</button>
       </div>
-     </div>
+    </div>
   </div>
 </div>
 <%= render "components/footer"%>
