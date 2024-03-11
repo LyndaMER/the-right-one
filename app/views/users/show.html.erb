@@ -3,7 +3,8 @@
 <%#card a droite%>
 
 <div class="flex-auto w-32 m-8 mx-auto">
-  <h1 class="text-4xl font-extrabold dark:text-black" style="white-space: nowrap;"><%= @user.first_name %> <%= @user.last_name %></h1>
+
+  <h1 class="text-4xl font-extrabold dark:text-black" style="white-space: nowrap;"><%= @user.first_name.capitalize %> <%= @user.last_name.upcase %></h1>
 </div>
 
 <div>
