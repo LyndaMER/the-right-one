@@ -49,7 +49,7 @@
             <button type="button" class="relative flex rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-terracotta-500 focus:ring-offset-2" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
               <span class="absolute -inset-1.5"></span>
               <span class="sr-only">Ouvrir le menu déroulant</span>
-              <img class="h-8 w-8 rounded-full" src="<%= current_user.pola_face %>" alt="Photo de profil">
+              <%= image_tag current_user.pola_face, class:"h-8 w-8 rounded-full", alt="Photo de profil"%>
             </button>
           </div>
   <!-- Menu déroulant -->
