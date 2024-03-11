@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   def home
     authorize current_user, policy_class: PagePolicy
     @auditions = Audition.all
-    @users = User.where.not(pola_face: nil).last(3)
+    @users = User.where.not(pola_face: nil)
   end
 
   def carousel
