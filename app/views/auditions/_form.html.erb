@@ -3,6 +3,8 @@
   <h1 class="text-4xl font-extrabold dark:text-black"><%= @audition.name %></h1>
   <p class="mb-6"><%= @audition.description %></p>
 
+<p class="mb-6"><%= @audition.description %></p>
+
 
 <%= form_with model: @audition, remote: true, html: { class: 'new_audition', id: 'new_audition'} do |f| %>
   <!-- Nom de l'audition -->
