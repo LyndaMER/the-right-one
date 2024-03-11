@@ -1,6 +1,5 @@
 <div class="container px-12 mb-25">
 
-<h1 class="text-2xl font-bold mb-4"><%= @audition.name %></h1>
 <p class="mb-6"><%= @audition.description %></p>
 
 <%= form_with model: @audition, remote: true, html: { class: 'new_audition', id: 'new_audition'} do |f| %>
