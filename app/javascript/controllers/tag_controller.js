@@ -13,10 +13,8 @@ export default class extends Controller {
     const tagTemplate = this.tagTemplateTarget.cloneNode(true);
     tagTemplate.classList.remove("hidden")
 
-    const idNumber = this.defineIdNumber();
     const selectField = tagTemplate.children[0]
-    selectField.id = `${this.idTemplate}-${idNumber}`;
-    selectField.dataset.autocompleteIdValue = `${this.idTemplate}-${idNumber}`;
+    selectField.dataset.controller = 'autocomplete';
 
     this.tagfieldsTarget.appendChild(tagTemplate);
   }
