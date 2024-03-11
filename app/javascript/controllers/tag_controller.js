@@ -5,12 +5,18 @@ export default class extends Controller {
 
   connect() {
     console.log("Tag controller connected");
+    this.idTemplate = this.tagTemplateTarget.children[0].id;
     this.addField();
   }
 
   addField() {
     const tagTemplate = this.tagTemplateTarget.cloneNode(true);
-    tagTemplate.classList.remove("hidden");
+    tagTemplate.classList.remove("hidden")
+
+    const idNumber = this.defineIdNumber();
+    const selectField = tagTemplate.children[0]
+    selectField.id = `${this.idTemplate}-${idNumber}`;
+    selectField.dataset.autocompleteIdValue = `${this.idTemplate}-${idNumber}`;
 
     this.tagfieldsTarget.appendChild(tagTemplate);
   }
@@ -22,6 +28,10 @@ export default class extends Controller {
 
       this.tagfieldsTarget.lastElementChild.remove();
     }
+  }
+
+  defineIdNumber() {
+    return this.tagfieldsTarget.children.length
   }
 
 }
