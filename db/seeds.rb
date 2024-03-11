@@ -7,33 +7,33 @@ require 'csv'
 CSV.foreach('db/Annesodb.csv', headers: true, col_sep: ';') do |row|
   p row
   user = User.create!(
-    prenom: row['prenom'],
-    nom: row['nom'],
+    first_name: row['first_name'],
+    last_name: row['last_name'],
     password: 'password',
-    telephone: row['telephone'],
-    reseau_social: row['reseau_social'],
-    adresse: row['adresse'],
-    ville: row['ville'],
-    langues: row['langues'],
+    phone_number: row['phone_number'],
+    social_link: row['social_link'],
+    address: row['address'],
+    city: row['city'],
+    languages: row['languages'],
     portfolio: row['portfolio'],
     email: row['email'],
-    date_de_naissance: row['date_de_naissance'],
+    birth_date: row['birth_date'],
     pola_face: row['pola_face'],
     pola_3_4: row['pola_3_4'],
     pola_silhouette: row['pola_silhouette'],
     pola_mains: row['pola_mains'],
     presentation_video: row['presentation_video']
   )
-  if row['date_de_naissance'].present?
+  if row['birth_date'].present?
     tag = Tag.find_or_create_by!(name: "age", value: user.age)
     UserTag.create!(user: user, tag: tag)
   end
-  if row['ville'].present?
-    tag = Tag.find_or_create_by!(name: "ville", value: row['ville'])
+  if row['city'].present?
+    tag = Tag.find_or_create_by!(name: "city", value: row['city'])
     UserTag.create!(user: user, tag: tag)
   end
-  if row['langues'].present?
-    tag = Tag.find_or_create_by!(name: "langues", value: row['langues'])
+  if row['languages'].present?
+    tag = Tag.find_or_create_by!(name: "languages", value: row['languages'])
     UserTag.create!(user: user, tag: tag)
   end
   if row['origine_ethnique'].present?
@@ -98,22 +98,22 @@ CSV.foreach('db/Annesodb.csv', headers: true, col_sep: ';') do |row|
   end
 end
 
-audition = Audition.create!(
-  name: 'Audition 1',
-  description: 'Audition pour une nouvelle marque de collants',
-  date: '2024-03-05',
-  user: User.first)
-  tag = Tag.find_or_create_by!(name: "couleur_de_cheveux", value: 'noir')
-  AuditionTag.create!(audition: audition, tag: tag, required: true)
-  tag = Tag.find_or_create_by!(name: "sexe", value: 'H')
-  AuditionTag.create!(audition: audition, tag: tag, required: true)
-  tag = Tag.find_or_create_by!(name: "taille_chaussures", value: '43')
-  AuditionTag.create!(audition: audition, tag: tag, required: false)
-  tag = Tag.find_or_create_by!(name: "permis_de_conduire", value: 'true')
-  AuditionTag.create!(audition: audition, tag: tag, required: false)
-  tag = Tag.find_or_create_by!(name: "piercing", value: 'true')
-  AuditionTag.create!(audition: audition, tag: tag, required: false)
-  tag = Tag.find_or_create_by!(name: "langue", value: 'français')
-  AuditionTag.create!(audition: audition, tag: tag, required: false)
-  tag = Tag.find_or_create_by!(name: "age", value: '25')
-  AuditionTag.create!(audition: audition, tag: tag, required: false)
+# audition = Audition.create!(
+#   name: 'Audition 1',
+#   description: 'Audition pour une nouvelle marque de collants',
+#   date: '2024-03-05',
+#   user: User.first)
+#   tag = Tag.find_or_create_by!(name: "couleur_de_cheveux", value: 'noir')
+#   AuditionTag.create!(audition: audition, tag: tag, required: true)
+#   tag = Tag.find_or_create_by!(name: "sexe", value: 'H')
+#   AuditionTag.create!(audition: audition, tag: tag, required: true)
+#   tag = Tag.find_or_create_by!(name: "taille_chaussures", value: '43')
+#   AuditionTag.create!(audition: audition, tag: tag, required: false)
+#   tag = Tag.find_or_create_by!(name: "permis_de_conduire", value: 'true')
+#   AuditionTag.create!(audition: audition, tag: tag, required: false)
+#   tag = Tag.find_or_create_by!(name: "piercing", value: 'true')
+#   AuditionTag.create!(audition: audition, tag: tag, required: false)
+#   tag = Tag.find_or_create_by!(name: "langue", value: 'français')
+#   AuditionTag.create!(audition: audition, tag: tag, required: false)
+#   tag = Tag.find_or_create_by!(name: "age", value: '25')
+#   AuditionTag.create!(audition: audition, tag: tag, required: false)
