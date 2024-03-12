@@ -43,6 +43,38 @@ class User < ApplicationRecord
     tags.find_by(name: 'musique')&.value
   end
 
+  def couleur_de_cheveux
+    tags.find_by(name: 'couleur_de_cheveux')&.value
+  end
+
+  def couleur_yeux
+    tags.find_by(name: 'couleur_yeux')&.value
+  end
+
+  def taille
+    tags.find_by(name: 'taille')&.value
+  end
+
+  def taille_haut
+    tags.find_by(name: 'taille_haut')&.value
+  end
+
+  def taille_bas
+    tags.find_by(name: 'taille_bas')&.value
+  end
+
+  def tour_de_buste
+    tags.find_by(name: 'tour_de_buste')&.value
+  end
+
+  def tour_de_taille
+    tags.find_by(name: 'tour_de_taille')&.value
+  end
+
+  def tour_de_hanches
+    tags.find_by(name: 'tour_de_hanches')&.value
+  end
+
   def age()
     if birth_date.present?
       now = Time.now.utc.to_date
