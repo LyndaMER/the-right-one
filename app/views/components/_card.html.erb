@@ -1,12 +1,8 @@
-
-<div class="main-container">
-    <%= link_to user_path(user), class: "user-card " do %>
-    <img class="picture" src="<%= user.pola_face %>" alt="">
-    <h1 class= "titre"><%= user.first_name.capitalize %> <%= user.last_name.upcase %></h1>
-    <h2><%= user.age %></h2>
-    <h3><%= user.city %></h3>
-    <% end %>
-</div>
-
-      <%# <span class="inline-flex flex-row-reverse rounded-full bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">% de match</span> %>
-          <%# <a href="mailto:janecooper@example.com" class="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900"> %>
+<%= link_to user_path(user), class: "user-card" do %>
+  <img class="picture" src="<%= user.pola_face %>" alt="">
+  <h1 class= "titre"><%= user.first_name.capitalize %> <%= user.last_name.upcase %></h1>
+  <h2><%= user.age %></h2>
+  <h3><%= user.city %></h3>
+<% end %>
+<%# <span class="inline-flex flex-row-reverse rounded-full bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">% de match</span> %>
+<%# <a href="mailto:janecooper@example.com" class="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900"> %>

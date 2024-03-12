@@ -2,8 +2,12 @@
 
 <div class="main-container align-center mx-auto">
   <div class="flex justify-center mb-4 mt-20">
+
     <p class="text-4xl font-bold mb-6">Modifier le profil</p>
+
   </div>
 
-  <div class="form-container bg-white"><%= render 'form' %></div>
+  <div class="form-container bg-white">
+    <%= render 'form', type: :edit %>
+  </div>
 </div>

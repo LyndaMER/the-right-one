@@ -79,7 +79,10 @@
           <p><%= link_to"Présentation vidéo", @user.presentation_video, class: "btn bg-brown", target: "_blank" %></p>
         </div>
       </div>
-    <%= link_to"Modifier le profil", edit_artist_path(@user), class: "btn bg-white" %>
+
+    <%= link_to "Modifier le profil", edit_artist_path(@user), class: "btn bg-white" %>
+    <%= link_to "Supprimer le profil", artist_path(@user), data: { turbo_method: :delete, turbo_confirm: 'Êtes-vous sûr de vouloir supprimer ce profil?' }, class: "btn bg-brown" %>
+
     </div>
   </div>
 
@@ -143,5 +146,7 @@
     <% end %>
   </div>
 </div>
+
+
 
 <%= render "components/footer"%>
