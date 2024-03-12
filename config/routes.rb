@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :auditions do
     resources :artists, only: [:index]
   end
+  resources :artists, only: [:new, :create, :show, :edit, :update, :destroy]
   get "/test", to: "pages#test"
   resources :tags
   resources :user_tags, only: [:create, :destroy]

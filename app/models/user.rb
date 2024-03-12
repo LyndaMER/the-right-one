@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :tags, through: :user_tags
   has_many :auditions, dependent: :destroy
 
+  validates :first_name, presence: true
+
   def taille_chaussures
     tags.find_by(name: 'taille_chaussures')&.value
   end

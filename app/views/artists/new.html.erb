@@ -1,0 +1,75 @@
+<%= render "components/navbar" %>
+
+<h1>Nouvel Artiste</h1>
+
+
+<%= form_with model: @user, url: artists_path, data: { controller: 'user-form' } do |form| %>
+<!---Artist name ----->
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+  </div>
+<!------ Création de compte pour se connecter ----->
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.password_field :password, autocomplete: 'new-password' %>
+  </div>
+
+  <!---- Phone number ------>
+  <div class="field">
+    <%= form.label :phone_number %>
+    <%= form.text_field :phone_number %>
+  </div>
+
+  <!---- Adresse ---->
+    <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+
+  <!---- Gender ------>
+
+
+  <!---- Date of birth ---->
+  <div class="field">
+    <%= form.label :birth_date %>
+    <%= form.date_field :birth_date %>
+  </div>
+
+<!-- créer un lien pour que l'artiste ajoute son portfolio---->
+  <div class="field">
+    <%= form.label :portfolio %>
+    <%= form.text_field :portfolio %>
+  </div>
+
+  <!--- Ajouter le lien vers social-link --->
+  <div class="field">
+    <%= form.label :social_link %>
+    <%= form.text_field :social_link %>
+  </div>
+
+  <!---- Ajouter une photo ---->
+  <div class="field">
+    <%= form.label :pola_face %>
+    <%= form.text_field :pola_face %>
+  </div>
+
+
+
+<!---- creation du profile ------>
+
+  <div class="flex">
+    <%= form.submit "Créer", class: 'rounded-full bg-terracotta-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-terracotta-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-600 mb-4 ml-auto' %>
+  </div>
+
+<% end %>
