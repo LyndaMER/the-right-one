@@ -82,6 +82,7 @@
   background-color: #faf5f0;
 }
 
+
 .match-container {
   display: flex;
   flex-direction: column;
@@ -93,6 +94,7 @@
   border-radius: 5px;
   max-height: 100vh;
 }
+
 
 .card-container {
   display: flex;
@@ -177,6 +179,7 @@
   flex-grow: 1;
   margin-top: 10px;
 }
+
 
 .align-center{
   display: flex;
@@ -369,7 +372,25 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  }
+}
+
+/* Formulaire artist  */
+
+
+h1 {
+  color: #000000;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  test-align: center;
+}
+
+.form-btn{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
 .left {
   background-color: white;
   text-align: left;

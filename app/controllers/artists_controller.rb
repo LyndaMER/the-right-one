@@ -37,7 +37,7 @@ class ArtistsController < ApplicationController
   def destroy
     @artist = User.find(params[:id])
     @artist.destroy
-    redirect_to artists_path
+    redirect_to artists_path, notice: "Le profil de l'artiste a été supprimé avec succès."
   end
 
   private
