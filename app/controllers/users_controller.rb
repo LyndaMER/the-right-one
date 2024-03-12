@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_after_action :verify_authorized, only: [:search]
 
   def index
     @users = policy_scope(User)
@@ -30,6 +31,18 @@ class UsersController < ApplicationController
     authorize @user
     @user.destroy
     redirect_to users_path, notice: "Le profil a bien été supprimé."
+  end
+
+  def search
+    if params[:query].present?
+      @users = User.where("first_name ILIKE :query OR last_name ILIKE :query", query: "%#{params[:query]}%")
+    else
+      @users = User.not_admin
+    end
+
+    render json: {
+      text: render_to_string(partial: "components/cards", locals: { users: @users }, formats: :html),
+    }
   end
 
   private
