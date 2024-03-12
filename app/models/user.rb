@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :tags, through: :user_tags
   has_many :auditions, dependent: :destroy
 
+  scope :not_admin, -> { where(admin: false) }
   validates :first_name, presence: true
 
   def taille_chaussures
