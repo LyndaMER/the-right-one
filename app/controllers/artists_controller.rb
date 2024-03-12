@@ -25,19 +25,20 @@ class ArtistsController < ApplicationController
   end
 
   def edit
-    @artist = User.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def update
     @artist = User.find(params[:id])
     @artist.update(artist_params)
-    redirect_to artist_path(@artist)
+
+    redirect_to user_path(@artist)
   end
 
   def destroy
     @artist = User.find(params[:id])
     @artist.destroy
-    redirect_to artists_path, notice: "Le profil de l'artiste a été supprimé avec succès."
+    redirect_to users_path, notice: "Le profil de l'artiste a été supprimé avec succès."
   end
 
   private

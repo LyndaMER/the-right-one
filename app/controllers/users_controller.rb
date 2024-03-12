@@ -26,12 +26,11 @@ class UsersController < ApplicationController
     end
   end
 
-  def destroy
+  def edit
     @user = User.find(params[:id])
     authorize @user
-    @user.destroy
-    redirect_to users_path, notice: "Le profil a bien été supprimé."
   end
+
 
   def search
     if params[:query].present?

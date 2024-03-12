@@ -352,12 +352,14 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
 }
+
 .picture-on-profile {
   width: 300px;
   height: 300px;
   object-fit: cover;
   border-radius: 10px;
 }
+
 .user-card-on-profile{
   background-color: white;
   text-align: center;

@@ -1,6 +1,7 @@
   <div class="form-flex relative">
+  <% path = (type == :edit ? artist_path(@user) : artists_path) %>
 
-  <%= form_with model: @user, url: artists_path, data: { controller: 'user-form' } do |form| %>
+  <%= form_with model: @user, url: path, data: { controller: 'user-form' } do |form| %>
   <!---Artist name ----->
   <div class="mb-4">
     <%= form.label :Prénom, class: 'block text-gray-700 text-sm font-bold mb-2 bg-beige' %>
