@@ -432,14 +432,14 @@ h1 {
   width: 90%;
   border-radius: 10px;
   box-shadow: 2px 2px 10px #0000001b;
-  padding: 10px;
+  padding: 30px;
 }
 .left h2 {
   font-size: 1.5rem; /* Taille de police pour le titre */
   font-weight: 800; /* Graisse du titre */
   color: #000;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .left th {
   padding: 5px 0 5px 10px;
@@ -480,8 +480,8 @@ h1 {
   font-size: 1.5rem; /* Taille de police pour le titre */
   font-weight: 800; /* Graisse du titre */
   color: #000;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .middle th {
   padding: 5px 0 5px 10px;

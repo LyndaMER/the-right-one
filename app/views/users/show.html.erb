@@ -1,11 +1,8 @@
 <%= render "components/navbar" %>
 
 <div class="main-container-home">
-  <%#card a droite%>
-  <div class="titre text-center">
-
-
-    <h1 class="text-4xl font-extrabold dark:text-black" style="white-space: nowrap;"><%= @user.first_name.capitalize %> <%= @user.last_name.upcase %></h1>
+  <div class="flex justify-center mb-4 mt-20">
+    <p class="text-4xl font-extrabold dark:text-black"><%= @user.first_name.capitalize %> <%= @user.last_name.upcase %></p>
   </div>
 
   <div class="content">
@@ -40,7 +37,7 @@
               <tbody>
                 <tr>
                   <th scope="row">Sexe</th>
-                  <td><%= @user.sexe %></td>
+                  <td><%= @user.sexe.upcase %></td>
                 </tr>
                 <tr>
                   <th scope="row">Date de naissance</th>
@@ -78,10 +75,11 @@
 
         <div class="mt-4">
           <p><%= link_to"Portfolio", @user.portfolio, class: "btn bg-brown", target: "_blank" %></p>
-          <p><%= link_to"Réseau social", @user.social_link, class: "btn bg-brown", target: "_blank" %></p>
+          <p><%= link_to"Instagram", @user.social_link, class: "btn bg-brown", target: "_blank" %></p>
           <p><%= link_to"Présentation vidéo", @user.presentation_video, class: "btn bg-brown", target: "_blank" %></p>
         </div>
       </div>
+
     <%= link_to "Modifier le profil", edit_artist_path(@user), class: "btn bg-white" %>
     <%= link_to "Supprimer le profil", artist_path(@user), data: { turbo_method: :delete, turbo_confirm: 'Êtes-vous sûr de vouloir supprimer ce profil?' }, class: "btn bg-brown" %>
 
@@ -105,8 +103,8 @@
             <td><%= @user.couleur_yeux %></td>
           </tr>
           <tr>
-            <th scope="row">Taille (en cm)</th>
-            <td><%= @user.taille %></td>
+            <th scope="row">Taille</th>
+            <td><%= @user.taille %> cm</td>
           </tr>
           <tr>
             <th scope="row">Taille de haut</th>
@@ -122,15 +120,15 @@
           </tr>
           <tr>
             <th scope="row">Tour de buste</th>
-            <td><%= @user.tour_de_buste %></td>
+            <td><%= @user.tour_de_buste %> cm</td>
           </tr>
           <tr>
             <th scope="row">Tour de taille</th>
-            <td><%= @user.tour_de_taille %></td>
+            <td><%= @user.tour_de_taille %> cm</td>
           </tr>
           <tr>
             <th scope="row">Tour de hanches</th>
-            <td><%= @user.tour_de_hanches %></td>
+            <td><%= @user.tour_de_hanches %> cm</td>
           </tr>
         </tbody>
       </table>

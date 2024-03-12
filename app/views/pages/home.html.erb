@@ -1,7 +1,7 @@
 <%= render "components/navbar" %>
 <div class="main-container-home">
   <div class="">
-    <h1 class="text-4xl font-extrabold dark:text-black">Hello Anne-Sophie,</h1>
+    <p class="text-4xl font-extrabold dark:text-black">Hello Anne-Sophie,</p>
     <p class="text-2xl font-extrabold dark:text-black">Bienvenue sur The Right One ! 🎬</p>
   </div>
   <div class="contain">
@@ -29,6 +29,7 @@
     <div class="audition-users">
       <div class="audition-container block bg-white relative">
         <div>
+
           <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-black">📋 Auditions les plus récentes</h2>
           <ul class="auditions">
             <% @auditions.each do |audition| %>
@@ -46,6 +47,7 @@
                   </div>
                 </li>
               <% end %>
+
             <% end %>
           </ul>
         </div>
@@ -59,10 +61,7 @@
         </div>
         <div class="artists-home-card flex items-center">
           <% @users.last(1).each do |user| %>
-<<<<<<< HEAD
 
-=======
->>>>>>> c5521f708e8b6e744fb4a36df198683043193162
             <%= link_to user_path(user) do %>
               <div>
                 <img class="littlepicture" src="<%= user.pola_face %>" alt="">
