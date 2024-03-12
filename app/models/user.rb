@@ -34,6 +34,14 @@ class User < ApplicationRecord
     tags.find_by(name: 'langues')&.value
   end
 
+  def sport
+    tags.find_by(name: 'sport')&.value
+  end
+
+  def musique
+    tags.find_by(name: 'musique')&.value
+  end
+
   def age()
     if birth_date.present?
       now = Time.now.utc.to_date
