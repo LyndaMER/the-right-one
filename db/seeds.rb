@@ -30,43 +30,43 @@ CSV.foreach('db/Annesodb.csv', headers: true, col_sep: ';') do |row|
     UserTag.create!(user: user, tag: tag)
   end
   if row['city'].present?
-    tag = Tag.find_or_create_by!(name: "city", value: row['city'])
+    tag = Tag.find_or_create_by!(name: "city", value: row['city'].downcase)
     UserTag.create!(user: user, tag: tag)
   end
   if row['languages'].present?
-    tag = Tag.find_or_create_by!(name: "languages", value: row['languages'])
+    tag = Tag.find_or_create_by!(name: "languages", value: row['languages'].downcase)
     UserTag.create!(user: user, tag: tag)
   end
   if row['origine_ethnique'].present?
-    tag = Tag.find_or_create_by!(name: "origine_ethnique", value: row['origine_ethnique'])
+    tag = Tag.find_or_create_by!(name: "origine_ethnique", value: row['origine_ethnique'].downcase)
     UserTag.create!(user: user, tag: tag)
   end
   if row['sexe'].present?
-    tag = Tag.find_or_create_by!(name: "sexe", value: row['sexe'])
+    tag = Tag.find_or_create_by!(name: "sexe", value: row['sexe'].downcase)
     UserTag.create!(user: user, tag: tag)
   end
   if row['piercing'].present?
-    tag = Tag.find_or_create_by!(name: "piercing", value: row['piercing'])
+    tag = Tag.find_or_create_by!(name: "piercing", value: row['piercing'].downcase)
     UserTag.create!(user: user, tag: tag)
   end
   if row['sport'].present?
-    tag = Tag.find_or_create_by!(name: "sport", value: row['sport'])
+    tag = Tag.find_or_create_by!(name: "sport", value: row['sport'].downcase)
     UserTag.create!(user: user, tag: tag)
   end
   if row['musique'].present?
-    tag = Tag.find_or_create_by!(name: "musique", value: row['musique'])
+    tag = Tag.find_or_create_by!(name: "musique", value: row['musique'].downcase)
     UserTag.create!(user: user, tag: tag)
   end
   if row['permis_de_conduire'].present?
-    tag = Tag.find_or_create_by!(name: "permis_de_conduire", value: row['permis_de_conduire'])
+    tag = Tag.find_or_create_by!(name: "permis_de_conduire", value: row['permis_de_conduire'].downcase)
     UserTag.create!(user: user, tag: tag)
   end
   if row['couleur_de_cheveux'].present?
-    tag = Tag.find_or_create_by!(name: "couleur_de_cheveux", value: row['couleur_de_cheveux'])
+    tag = Tag.find_or_create_by!(name: "couleur_de_cheveux", value: row['couleur_de_cheveux'].downcase)
     UserTag.create!(user: user, tag: tag)
   end
   if row['couleur_yeux'].present?
-    tag = Tag.find_or_create_by!(name: "couleur_yeux", value: row['couleur_yeux'])
+    tag = Tag.find_or_create_by!(name: "couleur_yeux", value: row['couleur_yeux'].downcase)
     UserTag.create!(user: user, tag: tag)
   end
   if row['taille_haut'].present?
@@ -99,6 +99,7 @@ CSV.foreach('db/Annesodb.csv', headers: true, col_sep: ';') do |row|
   end
 end
 
+User.create!(email:"asbaldeyroncast@gmail.com", password:"123456", first_name:"Anne-Sophie", last_name:"Baldeyron", admin: true, pola_face: "https://scontent.flyn1-1.fna.fbcdn.net/v/t39.30808-6/386765810_10231780868804807_6112603021977143620_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_ohc=iu9FEHYkz9AAX_9eMan&_nc_ht=scontent.flyn1-1.fna&oh=00_AfBdqGoACEsK8EtQq96QFmlqYCYBD2KPXqr9NeAhHkR0TQ&oe=65F49760")
 # audition = Audition.create!(
 #   name: 'Audition 1',
 #   description: 'Audition pour une nouvelle marque de collants',

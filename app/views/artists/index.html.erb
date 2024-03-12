@@ -1,29 +1,32 @@
 <%= render "components/navbar" %>
-
 <div class="main-match-container">
-  <div class="user-cards">
+  <div class="user-cards-match ">
     <% @artists.each do |artist| %>
     <% user = artist[:user] %>
-    <%= link_to user_path(user), class: "user-card " do %>
-    <img class="picture" src="<%= user.pola_face %>" alt="">
+    <%= link_to user_path(user), class: " " do %>
+    <div class="relative user-card">
+      <img class="picture" src="<%= user.pola_face %>" alt="">
+      <span class="badge <%= define_badge_color(artist[:matching_percentage].to_i)%>"><%= artist[:matching_percentage].to_i  %> %</span>
     <h1 class= "titre"><%= user.first_name %> <%= user.last_name %></h1>
     <h2><%= user.age %></h2>
     <h3><%= user.city %></h3>
-    <span class="inline-flex items-center rounded-full bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20"><%= artist[:matching_percentage].to_i  %> %</span>
-    <% end %><% end %>
+    </div>
+    <% end %>
+    <% end %>
   </div>
-  <div class="match-container bg-brown">
-    <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Matchs</div>
-    <h3 class="text-xl font-semibold"> le nombre d'artistes trouvés: <%= @artists.count %></h3>
-    <h1 class="text-3xl font-bold mt-4 mb-2">Nom de l'audition : <%= @audition.name %></h1>
+  <div class="match-container">
+    <div class="titre-match">Matchs</div>
+    <hr>
+    <h3 class=""> le nombre d'artistes trouvés: <%= @artists.count %></h3>
+    <h1 class="">Nom de l'audition : <%= @audition.name %></h1>
     <% if @audition.description.present? %>
-    <h3 class="text-lg font-semibold">Description de l'audition : </h3>
+    <h3 class="">Description de l'audition : </h3>
     <p class="mb-4"><%= @audition.description %></p>
     <% else %>
     <p class="mb-4">Aucune description disponible.</p>
     <% end %>
     <% if @audition.audition_tags.present? %>
-    <h2 class="text-xl font-semibold mb-2">Critères obligatoires :</h2>
+    <h2 class="">Critères obligatoires :</h2>
     <ul>
       <% @audition.audition_tags.where(required: true).each do |audition_tag| %>
       <li class="mb-1"><strong><%= audition_tag.tag.name %></strong>: <%= audition_tag.tag.value %></li>
@@ -33,7 +36,7 @@
     <p class="mb-4">Aucun critère obligatoire associé à cette audition.</p>
     <% end %>
     <% if @audition.audition_tags.present? %>
-    <h2 class="text-xl font-semibold mb-2">Critères secondaires :</h2>
+    <h2 class="">Critères secondaires :</h2>
     <ul>
       <% @audition.audition_tags.where(required: false).each do |audition_tag| %>
       <li class="mb-1"><strong><%= audition_tag.tag.name %></strong>: <%= audition_tag.tag.value %></li>

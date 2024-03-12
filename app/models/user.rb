@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :tags, through: :user_tags
   has_many :auditions, dependent: :destroy
 
+  scope :not_admin, -> { where(admin: false) }
+
   def taille_chaussures
     tags.find_by(name: 'taille_chaussures')&.value
   end
