@@ -3,7 +3,7 @@ require "awesome_print"
 class ArtistsMatcherService
   def initialize(audition)
     @audition = audition
-    @users = User.all
+    @users = User.not_admin
     @required_tags = @audition.audition_tags.where(required: true).map(&:tag_id).flatten.uniq
     @optional_tags = @audition.audition_tags.where(required: false).map(&:tag_id).flatten.uniq
   end
@@ -15,17 +15,13 @@ class ArtistsMatcherService
                         .where(tags: { id: @required_tags })
                         .group("users.id")
                         .having("COUNT(DISTINCT tags.id) = ?", @required_tags.count)
-
     ap @users.map(&:id)
     ap @good_users.map(&:id)
     # 2. Return the users that match the audition with pourcentage of matching tags
     results = @good_users.map do |user|
       user_tags = user.tags.map(&:id)
-
       all_tags = @optional_tags + @required_tags
-
       matching_tags = (user_tags & all_tags).uniq
-
       matching_percentage = (matching_tags.count.to_f / all_tags.count) * 100
       { user: user, matching_percentage: matching_percentage }
     end

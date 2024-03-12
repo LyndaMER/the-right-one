@@ -33,14 +33,14 @@ class AuditionsController < ApplicationController
         puts "value: #{value}"
         puts "tag_name: #{tag_name}"
         next if value.empty?
-        tag = Tag.find_or_create_by(name: tag_name, value: value)
+        tag = Tag.find_or_create_by(name: tag_name, value: value.is_a?(String) ? value.downcase : value)
         AuditionTag.create(audition: @audition, tag: tag, required: true)
       end
 
       params[:optional_tags][:name].each_with_index do |tag_name, index|
         value = params[:optional_tags][:value][index.to_i]
         next if value.empty?
-        tag = Tag.find_or_create_by(name: tag_name, value: value)
+        tag = Tag.find_or_create_by(name: tag_name, value: value.is_a?(String) ? value.downcase : value)
         AuditionTag.create(audition: @audition, tag: tag, required: false)
       end
       redirect_to audition_artists_path(@audition), notice: "L'audition a bien été modifiée."

@@ -10,20 +10,92 @@
 
   <div class="content">
     <div class="left">
-    </div>
-
-    <div class="user-card-on-profile">
-      <%= image_tag @user.pola_face, class: "picture-on-profile" if @user.pola_face %>
-
-      <div class="mt-4">
-        <%= link_to"Portfolio", @user.portfolio, class: "btn bg-brown", target: "_blank" %>
-        <%= link_to"Réseau social", @user.social_link, class: "btn bg-brown", target: "_blank" %>
+      <div>
+        <div>
+          <h2>📞 Contact</h2>
+          <table class="size-full">
+            <tbody>
+              <tr>
+                <th scope="row">E-mail</th>
+                <td><%= @user.email %></td>
+              </tr>
+              <tr>
+                <th scope="row">Téléphone</th>
+                <td>0<%= @user.phone_number %></td>
+              </tr>
+              <tr>
+                <th scope="row">Adresse</th>
+                <td><%= @user.address %></td>
+              </tr>
+              <tr>
+                <th scope="row">Grande ville la plus proche</th>
+                <td><%= @user.city %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h2>💬 Informations</h2>
+            <table class="size-full">
+              <tbody>
+                <tr>
+                  <th scope="row">Sexe</th>
+                  <td><%= @user.sexe %></td>
+                </tr>
+                <tr>
+                  <th scope="row">Date de naissance</th>
+                  <td><%= @user.birth_date %></td>
+                </tr>
+                <tr>
+                  <th scope="row">Langues parlées</th>
+                  <td><%= @user.languages %></td>
+                </tr>
+                <tr>
+                  <th scope="row">Permis de conduire</th>
+                  <td><%= @user.permis_de_conduire %></td>
+                </tr>
+              </tbody>
+            </table>
+          <h2>🥇 Compétences</h2>
+            <table class="size-full">
+              <tbody>
+                <tr>
+                  <th scope="row">Sport</th>
+                  <td><%= @user.sport %></td>
+                </tr>
+                <tr>
+                  <th scope="row">Musique</th>
+                  <td><%= @user.musique %></td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
       </div>
+    </div>
+    <div class="right">
+      <div class="user-card-on-profile">
+        <%= image_tag @user.pola_face, class: "picture-on-profile" if @user.pola_face %>
+
+        <div class="mt-4">
+          <p><%= link_to"Portfolio", @user.portfolio, class: "btn bg-brown", target: "_blank" %></p>
+          <p><%= link_to"Réseau social", @user.social_link, class: "btn bg-brown", target: "_blank" %></p>
+          <p><%= link_to"Présentation vidéo", @user.presentation_video, class: "btn bg-brown", target: "_blank" %></p>
+        </div>
+      </div>
+    <%= link_to"Modifier le profil", edit_user_path, class: "btn bg-white" %>
     </div>
   </div>
 
-  <div>
-    <%# mettre les reponses du formulaire dans cette div%>
+  <div class="pictures-show-user">
+    <% if @user.pola_3_4.present? %>
+      <img src="<%= @user.pola_3_4 %>" alt="pola 3/4">
+    <% end %>
+    <% if @user.pola_silhouette.present? %>
+      <img src="<%= @user.pola_silhouette %>" alt="pola silhouette">
+    <% end %>
+    <% if @user.pola_mains.present? %>
+      <img src="<%= @user.pola_mains %>" alt="pola mains">
+    <% end %>
   </div>
 </div>
 

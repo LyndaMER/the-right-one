@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def index
     @users = policy_scope(User)
-    @users = User.all
+    @users = User.where(admin: false)
   end
 
   def show

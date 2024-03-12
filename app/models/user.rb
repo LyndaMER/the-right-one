@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :tags, through: :user_tags
   has_many :auditions, dependent: :destroy
 
+  scope :not_admin, -> { where(admin: false) }
   validates :first_name, presence: true
 
   def taille_chaussures
@@ -32,6 +33,14 @@ class User < ApplicationRecord
 
   def langues
     tags.find_by(name: 'langues')&.value
+  end
+
+  def sport
+    tags.find_by(name: 'sport')&.value
+  end
+
+  def musique
+    tags.find_by(name: 'musique')&.value
   end
 
   def age()
