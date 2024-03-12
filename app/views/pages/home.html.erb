@@ -57,7 +57,7 @@
       <div class="users-container block bg-brown">
         <div class="flex items-center justify-between">
           <p><%= @users.count %> artistes enregistrés ⭐</p>
-          <%= link_to"+ Ajouter un artiste", new_user_path, class: "btn bg-white" %>
+          <%= link_to"+ Ajouter un artiste", new_artist_path, class: "btn bg-white" %>
         </div>
         <div class="artists-home-card flex items-center">
           <% @lastuser.last(1).each do |user| %>
