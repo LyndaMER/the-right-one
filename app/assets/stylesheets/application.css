@@ -204,15 +204,47 @@
   /* background-color: #fa0404; */
   color: white;
   padding: 25px 1rem;
-  border-radius: 50px;
-  width: 90px;
-  height: 90px;
-  font-size: 16px;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  font-size: 12px;
   font-weight:600;
   position: absolute;
   top: 0;
   right:0;
-  transform: translate(20%, -50%);
+  transform: translate(20%, -40%);
+
+}
+.badge-silver{
+  background: linear-gradient(90deg, #656565 0%, #c6c5c5 100%);
+  /* background-color: #fa0404; */
+  color: rgb(0, 0, 0);
+  padding: 25px 1rem;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  font-size: 12px;
+  font-weight:600;
+  position: absolute;
+  top: 0;
+  right:0;
+  transform: translate(20%, -40%);
+
+}
+.badge-bronze{
+  background: linear-gradient(90deg, #cd7f32 0%, #d4a017 100%);
+  /* background-color: #fa0404; */
+  color: white;
+  padding: 25px 1rem;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  font-size: 12px;
+  font-weight:600;
+  position: absolute;
+  top: 0;
+  right:0;
+  transform: translate(20%, -40%);
 
 }
 

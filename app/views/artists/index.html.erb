@@ -5,7 +5,7 @@
     <% user = artist[:user] %>
     <%= link_to user_path(user), class: " " do %>
     <div class="relative user-card">
-      <img class="picture" src="<%= user.pola_face %>" alt="">
+      <img class="picture" src="<%= user.pola_face %>" alt="" loading="lazy">
       <span class="badge <%= define_badge_color(artist[:matching_percentage].to_i)%>"><%= artist[:matching_percentage].to_i  %> %</span>
     <h1 class= "titre"><%= user.first_name %> <%= user.last_name %></h1>
     <h2><%= user.age %></h2>
