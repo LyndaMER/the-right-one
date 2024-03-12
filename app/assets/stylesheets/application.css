@@ -21,8 +21,8 @@
   padding: 0;
   z-index: 1;
   display: block;
-  max-width: 444px;
-  height: 600px;
+  width: 900px;
+  height: 500px;
 }
 
 .swiper-wrapper {
@@ -55,7 +55,7 @@
 }
 
 .swiper-image {
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .filter-cards {
@@ -78,39 +78,65 @@
   display: flex;
   flex-direction: column;
 }
-/* toute la page, container principal */
+
+.users-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+/* toute la page, container principal de l'index artistes*/
 .main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 2rem;
+  background-color: #faf5f0;
+}
+
+.match-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: white;
+  position:sticky;
+  top: 0;
+  border-radius: 5px;
+  max-height: 100vh;
+}
+
+.card-container {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   padding: 2rem;
   background-color: #faf5f0;
+  grid: 2px;
 }
 /* gap entre les cards */
 .contain {
   display: flex;
-  gap: 3rem;
+  gap: 1rem;
 }
-/* bloc des auditions - page acceuil */
-.audition-users {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  width: 100%;
-}
+
 /* format bloc */
 .block {
   padding: 1rem 2rem;
-  border-radius: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #0000001b;
+}
+
+.search-input {
+  border-radius: 10px;
   box-shadow: 2px 2px 10px #0000001b;
 }
 
 .bg-white {
   background-color: white;
-  color: #962a1b;
+  color: #461111;
 }
 .bg-brown {
-  background-color: #962a1b;
+  background-color: #461111;
   color: white;
 }
 
@@ -132,9 +158,8 @@
   background-color: white;
   text-align: center;
   color: black;
-  border-radius: 20px;
+  border-radius: 10px;
   box-shadow: 2px 2px 10px #0000001b;
-  ;
 }
 /* titre en gras sur les cards */
 .titre {
@@ -148,17 +173,19 @@
   object-fit: cover;
   box-shadow: 2px 2px 10px #0000001b;
   margin-bottom: 20px;
-  border-radius: 20px 20px 0px 0px;
+  border-radius: 10px;
 }
+
 /* conteneur du formulaire */
 .form-container{
   display: flex;
-  padding: 1rem 2rem;
+  padding: 3rem 2rem;
   border-radius: 20px;
   box-shadow: 2px 2px 10px #0000001b;
   background-color: white;
   width: 900px;
-
+  flex-grow: 1;
+  margin-top: 10px;
 }
 
 .align-center{
@@ -167,3 +194,83 @@
   align-items: center;
   gap: 1rem;
 }
+
+.form-flex{
+  flex-grow: 1;
+}
+.main-match-container{
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #faf5f0;
+  width: 100%;
+}
+
+/* Pages/home */
+.main-container-home {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem 8rem;
+  background-color: #faf5f0;
+}
+.audition-users {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+.block-card-home {
+  padding: 1rem 1rem;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #0000001b;
+  width: 100%;
+}
+.artists-home-card{
+  background-color: white;
+  text-align: left;
+  color: black;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #0000001b;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.new-audition {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+.littlepicture{
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  box-shadow: 2px 2px 10px #0000001b;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+/* User/show */
+.content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+.picture-on-profile {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+.user-card-on-profile{
+  background-color: white;
+  text-align: center;
+  color: black;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #0000001b;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }

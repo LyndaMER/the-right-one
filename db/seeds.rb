@@ -24,6 +24,7 @@ CSV.foreach('db/Annesodb.csv', headers: true, col_sep: ';') do |row|
     pola_mains: row['pola_mains'],
     presentation_video: row['presentation_video']
   )
+
   if row['birth_date'].present?
     tag = Tag.find_or_create_by!(name: "age", value: user.age)
     UserTag.create!(user: user, tag: tag)

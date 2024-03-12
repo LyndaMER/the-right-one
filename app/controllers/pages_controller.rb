@@ -4,18 +4,13 @@ class PagesController < ApplicationController
   def home
     authorize current_user, policy_class: PagePolicy
     @auditions = Audition.all
-    @users = User.where.not(pola_face: nil)
+    @users = User.where.not(pola_face: nil).shuffle
+    @lastuser = User.where.not(pola_face: nil).last(1)
   end
 
-  def carousel
-    authorize current_user, policy_class: PagePolicy
-    @auditions = Audition.all
-    @users = User.where.not(pola_face: nil).last(3)
-  end
   def design_system
   end
 
   def test
-
   end
 end
