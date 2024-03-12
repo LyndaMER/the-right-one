@@ -17,33 +17,33 @@
   <div class="match-container">
     <div class="titre-match">Matchs</div>
     <hr>
-    <h3 class=""> le nombre d'artistes trouvés: <%= @artists.count %></h3>
-    <h1 class="">Nom de l'audition : <%= @audition.name %></h1>
+    <h3 class="">Nombre d'artistes trouvés: <%= @artists.count %></h3>
+    <h1 class="">Nom de l'audition: <%= @audition.name %></h1>
     <% if @audition.description.present? %>
-    <h3 class="">Description de l'audition : </h3>
+    <h3 class="">Description de l'audition: </h3>
     <p class="mb-4"><%= @audition.description %></p>
     <% else %>
     <p class="mb-4">Aucune description disponible.</p>
     <% end %>
     <% if @audition.audition_tags.present? %>
-    <h2 class="">Critères obligatoires :</h2>
+    <h2 class="">Critères obligatoires:</h2>
     <ul>
       <% @audition.audition_tags.where(required: true).each do |audition_tag| %>
       <li class="mb-1"><strong><%= audition_tag.tag.name %></strong>: <%= audition_tag.tag.value %></li>
       <% end %>
     </ul>
     <% else %>
-    <p class="mb-4">Aucun critère obligatoire associé à cette audition.</p>
+    <p class="mb-4">Aucun critère obligatoire n'est associé à cette audition.</p>
     <% end %>
     <% if @audition.audition_tags.present? %>
-    <h2 class="">Critères secondaires :</h2>
+    <h2 class="">Critères secondaires:</h2>
     <ul>
       <% @audition.audition_tags.where(required: false).each do |audition_tag| %>
       <li class="mb-1"><strong><%= audition_tag.tag.name %></strong>: <%= audition_tag.tag.value %></li>
       <% end %>
     </ul>
       <% else %>
-    <p class="mb-4">Aucun critère secondaire associé à cette audition.</p>
+    <p class="mb-4">Aucun critère secondaire n'est associé à cette audition.</p>
     <% end %>
     <%= link_to "Retour", auditions_path, class: 'text-blue-500 hover:text-blue-700' %>
     <%= link_to "Nouvelle audition", new_audition_path, class: 'text-blue-500 hover:text-blue-700' %>
