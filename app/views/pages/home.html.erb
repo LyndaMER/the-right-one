@@ -1,7 +1,7 @@
 <%= render "components/navbar" %>
 <div class="main-container-home">
   <div class="">
-    <h1 class="text-4xl font-extrabold dark:text-black">Hello Anne-Sophie,</h1>
+    <p class="text-4xl font-extrabold dark:text-black">Hello Anne-Sophie,</p>
     <p class="text-2xl font-extrabold dark:text-black">Bienvenue sur The Right One ! 🎬</p>
   </div>
   <div class="contain">
@@ -32,7 +32,7 @@
         <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-black">📋 Auditions les plus récentes</h2>
         <ul class="auditions">
           <% @auditions.each do |audition| %>
-            <%= link_to user_path(user) do %>
+            <%= link_to audition_path(audition) do %>
             <li>
               <div class="flex items-center space-x-4 rtl:space-x-reverse">
                 <div class="flex-1 min-w-0">
