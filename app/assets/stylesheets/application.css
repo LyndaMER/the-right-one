@@ -68,29 +68,51 @@
   flex-direction: column;
 }
 
+.users-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+/* toute la page, container principal de l'index artistes*/
+.main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 2rem;
+  background-color: #faf5f0;
+}
+
+.match-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: white;
+  position:sticky;
+  top: 0;
+  border-radius: 5px;
+  max-height: 100vh;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #faf5f0;
+  grid: 2px;
+}
 /* gap entre les cards */
 .contain {
   display: flex;
   gap: 1rem;
 }
-/* bloc des auditions - page acceuil */
-.audition-users {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  width: 100%;
-}
+
 /* format bloc */
 .block {
   padding: 1rem 2rem;
   border-radius: 10px;
   box-shadow: 2px 2px 10px #0000001b;
-}
-.block-card-home {
-  padding: 1rem 1rem;
-  border-radius: 10px;
-  box-shadow: 2px 2px 10px #0000001b;
-  width: 100%;
 }
 
 .search-input {
@@ -120,6 +142,14 @@
   font-weight: 600; /* Gras en font-semibold */
 }
 
+/* card user comme dans artistes */
+.user-card{
+  background-color: white;
+  text-align: center;
+  color: black;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #0000001b;
+}
 
 /* titre en gras sur les cards */
 .titre {
@@ -135,23 +165,6 @@
   margin-bottom: 20px;
   border-radius: 10px 10px 0 0;
 }
-.artists-home-card{
-  background-color: white;
-  text-align: left;
-  color: black;
-  border-radius: 10px;
-  box-shadow: 2px 2px 10px #0000001b;
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-.littlepicture{
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  box-shadow: 2px 2px 10px #0000001b;
-  margin: 20px;
-  border-radius: 10px;
-}
 
 /* conteneur du formulaire */
 .form-container{
@@ -163,7 +176,6 @@
   width: 900px;
   flex-grow: 1;
   margin-top: 10px;
-
 }
 
 .align-center{
@@ -287,4 +299,94 @@
   gap: 2rem;
   width: 100%;
 
+}
+
+/* Pages/home */
+.main-container-home {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem 8rem;
+  background-color: #faf5f0;
+}
+.audition-users {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+.block-card-home {
+  padding: 1rem 1rem;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #0000001b;
+  width: 100%;
+}
+.artists-home-card{
+  background-color: white;
+  text-align: left;
+  color: black;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #0000001b;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.new-audition {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+.littlepicture{
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  box-shadow: 2px 2px 10px #0000001b;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+/* User/show */
+.content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+.picture-on-profile {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.user-card-on-profile{
+  background-color: white;
+  text-align: center;
+  color: black;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #0000001b;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+.left {
+  background-color: white;
+  text-align: left;
+  color: black;
+  width: 90%;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #0000001b;
+  padding: 1rem 1rem;
+}
+.left h2 {
+  font-size: 1.5rem; /* Taille de police pour le titre */
+  font-weight: 800; /* Graisse du titre */
+  color: #000;
+}
+.left p {
+  margin-bottom: 10px; /* Ajoute de la marge en bas de chaque paragraphe */
+}
+.right p {
+  margin: 18px; /* Ajoute de la marge en bas de chaque paragraphe */
 }

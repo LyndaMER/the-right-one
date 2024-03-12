@@ -1,55 +1,45 @@
 <%= render "components/navbar" %>
 
-<%#card a droite%>
+<div class="main-container-home">
+  <%#card a droite%>
+  <div class="titre text-center">
 
-<div class="flex-auto w-32 m-8 mx-auto">
 
-  <h1 class="text-4xl font-extrabold dark:text-black" style="white-space: nowrap;"><%= @user.first_name.capitalize %> <%= @user.last_name.upcase %></h1>
-</div>
+    <h1 class="text-4xl font-extrabold dark:text-black" style="white-space: nowrap;"><%= @user.first_name.capitalize %> <%= @user.last_name.upcase %></h1>
+  </div>
 
-<div>
-  <%= image_tag @user.pola_face if @user.pola_face %>
-  <%#ajouter deux boutons%>
-</div>
+  <div class="content">
+    <div class="left">
+      <div>
+        <div>
+          <h2>Contact</h2>
+          <p><%= @user.email %></p>
+          <p><%= @user.phone_number %></p>
+          <p><%= @user.address %></p>
+        </div>
+        <div>
+          <h2>Informations</h2>
+          <p><%= @user.birth_date %></p>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="user-card-on-profile">
+        <%= image_tag @user.pola_face, class: "picture-on-profile" if @user.pola_face %>
 
-<div>
-  <%# mettre les reponses du formulaire dans cette div%>
+        <div class="mt-4">
+          <p><%= link_to"Portfolio", @user.portfolio, class: "btn bg-brown", target: "_blank" %></p>
+          <p><%= link_to"Réseau social", @user.social_link, class: "btn bg-brown", target: "_blank" %></p>
+        </div>
+      </div>
+    <%= link_to"Modifier le profil", edit_user_path, class: "btn bg-white" %>
+    </div>
+
+  </div>
+
+
   <div>
-    <div class="px-4 sm:px-0">
-      <button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500">Update</button>
-      <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">N'oubliez pas de mettre à jour vos informations !</p>
-    </div>
-    <div class="mt-6 border-t border-gray-100">
-      <dl class="divide-y divide-gray-100">
-        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-          <dt class="text-sm font-medium leading-6 text-gray-900">Numéro de téléphone</dt>
-          <dd class="mt-1 flex text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-            <span class="flex-grow"> </span>
-            <span class="ml-4 flex-shrink-0">
-              <button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500">Update</button>
-            </span>
-          </dd>
-        </div>
-        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-          <dt class="text-sm font-medium leading-6 text-gray-900">Adresse</dt>
-          <dd class="mt-1 flex text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-            <span class="flex-grow">Backend Developer</span>
-            <span class="ml-4 flex-shrink-0">
-              <button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500">Update</button>
-            </span>
-          </dd>
-        </div>
-        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-          <dt class="text-sm font-medium leading-6 text-gray-900">Langues parlées</dt>
-          <dd class="mt-1 flex text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-            <span class="flex-grow">margotfoster@example.com</span>
-            <span class="ml-4 flex-shrink-0">
-              <button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500">Update</button>
-            </span>
-          </dd>
-        </div>
-      </dl>
-    </div>
+  <%# photos des polas %>
   </div>
 </div>
 

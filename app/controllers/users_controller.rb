@@ -31,4 +31,10 @@ class UsersController < ApplicationController
     @user.destroy
     redirect_to users_path, notice: "Le profil a bien été supprimé."
   end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :photo)
+  end
 end
