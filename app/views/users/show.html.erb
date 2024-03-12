@@ -82,8 +82,58 @@
           <p><%= link_to"Présentation vidéo", @user.presentation_video, class: "btn bg-brown", target: "_blank" %></p>
         </div>
       </div>
-    <%= link_to"Modifier le profil", edit_user_path, class: "btn bg-white" %>
+    <%= link_to "Modifier le profil", edit_artist_path(@user), class: "btn bg-white" %>
+    <%= link_to "Supprimer le profil", artist_path(@user), data: { turbo_method: :delete, turbo_confirm: 'Êtes-vous sûr de vouloir supprimer ce profil?' }, class: "btn bg-brown" %>
+
     </div>
+  </div>
+
+  <div class="middle">
+    <h2>⭐ Physique</h2>
+      <table class="size-notfull">
+        <tbody>
+          <tr>
+            <th scope="row">Piercing</th>
+            <td><%= @user.piercing %></td>
+          </tr>
+          <tr>
+            <th scope="row">Couleur de cheveux</th>
+            <td><%= @user.couleur_de_cheveux %></td>
+          </tr>
+          <tr>
+            <th scope="row">Couleur des yeux</th>
+            <td><%= @user.couleur_yeux %></td>
+          </tr>
+          <tr>
+            <th scope="row">Taille (en cm)</th>
+            <td><%= @user.taille %></td>
+          </tr>
+          <tr>
+            <th scope="row">Taille de haut</th>
+            <td><%= @user.taille_haut %></td>
+          </tr>
+          <tr>
+            <th scope="row">Taille de bas</th>
+            <td><%= @user.taille_bas %></td>
+          </tr>
+          <tr>
+            <th scope="row">Pointure</th>
+            <td><%= @user.taille_chaussures %></td>
+          </tr>
+          <tr>
+            <th scope="row">Tour de buste</th>
+            <td><%= @user.tour_de_buste %></td>
+          </tr>
+          <tr>
+            <th scope="row">Tour de taille</th>
+            <td><%= @user.tour_de_taille %></td>
+          </tr>
+          <tr>
+            <th scope="row">Tour de hanches</th>
+            <td><%= @user.tour_de_hanches %></td>
+          </tr>
+        </tbody>
+      </table>
   </div>
 
   <div class="pictures-show-user">
@@ -98,6 +148,7 @@
     <% end %>
   </div>
 </div>
+
 
 
 <%= render "components/footer"%>
