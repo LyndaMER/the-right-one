@@ -61,7 +61,7 @@
         </div>
         <div class="artists-home-card flex items-center">
 
-          <% @users.not_admin.last(1).each do |user| %>
+          <% @users.last(1).each do |user| %>
 
             <%= link_to user_path(user) do %>
               <div>
