@@ -259,6 +259,7 @@
   width: 300px;
   height: 300px;
   object-fit: cover;
+  border-radius: 10px;
 }
 .user-card-on-profile{
   background-color: white;
@@ -274,3 +275,23 @@
   flex-direction: column;
   align-items: center;
   }
+.left {
+  background-color: white;
+  text-align: left;
+  color: black;
+  width: 90%;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #0000001b;
+  padding: 1rem 1rem;
+}
+.left h2 {
+  font-size: 1.5rem; /* Taille de police pour le titre */
+  font-weight: 800; /* Graisse du titre */
+  color: #000;
+}
+.left p {
+  margin-bottom: 10px; /* Ajoute de la marge en bas de chaque paragraphe */
+}
+.right p {
+  margin: 18px; /* Ajoute de la marge en bas de chaque paragraphe */
+}

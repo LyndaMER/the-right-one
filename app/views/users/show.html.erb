@@ -10,20 +10,36 @@
 
   <div class="content">
     <div class="left">
-    </div>
-
-    <div class="user-card-on-profile">
-      <%= image_tag @user.pola_face, class: "picture-on-profile" if @user.pola_face %>
-
-      <div class="mt-4">
-        <%= link_to"Portfolio", @user.portfolio, class: "btn bg-brown", target: "_blank" %>
-        <%= link_to"Réseau social", @user.social_link, class: "btn bg-brown", target: "_blank" %>
+      <div>
+        <div>
+          <h2>Contact</h2>
+          <p><%= @user.email %></p>
+          <p><%= @user.phone_number %></p>
+          <p><%= @user.address %></p>
+        </div>
+        <div>
+          <h2>Informations</h2>
+          <p><%= @user.birth_date %></p>
+        </div>
       </div>
     </div>
+    <div class="right">
+      <div class="user-card-on-profile">
+        <%= image_tag @user.pola_face, class: "picture-on-profile" if @user.pola_face %>
+
+        <div class="mt-4">
+          <p><%= link_to"Portfolio", @user.portfolio, class: "btn bg-brown", target: "_blank" %></p>
+          <p><%= link_to"Réseau social", @user.social_link, class: "btn bg-brown", target: "_blank" %></p>
+        </div>
+      </div>
+    <%= link_to"Modifier le profil", edit_user_path, class: "btn bg-white" %>
+    </div>
+
   </div>
 
+
   <div>
-    <%# mettre les reponses du formulaire dans cette div%>
+  <%# photos des polas %>
   </div>
 </div>
 
