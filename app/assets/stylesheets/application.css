@@ -92,14 +92,7 @@
   padding: 2rem 2rem;
   background-color: #faf5f0;
 }
-/* container principal de la home page */
-.main-container-home {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 1rem 8rem;
-  background-color: #faf5f0;
-}
+
 .match-container {
   display: flex;
   flex-direction: column;
@@ -125,24 +118,12 @@
   display: flex;
   gap: 1rem;
 }
-/* bloc des auditions - page acceuil */
-.audition-users {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  width: 100%;
-}
+
 /* format bloc */
 .block {
   padding: 1rem 2rem;
   border-radius: 10px;
   box-shadow: 2px 2px 10px #0000001b;
-}
-.block-card-home {
-  padding: 1rem 1rem;
-  border-radius: 10px;
-  box-shadow: 2px 2px 10px #0000001b;
-  width: 100%;
 }
 
 .search-input {
@@ -180,7 +161,6 @@
   border-radius: 10px;
   box-shadow: 2px 2px 10px #0000001b;
 }
-
 /* titre en gras sur les cards */
 .titre {
   font-weight: bold;
@@ -195,23 +175,6 @@
   margin-bottom: 20px;
   border-radius: 10px;
 }
-.artists-home-card{
-  background-color: white;
-  text-align: left;
-  color: black;
-  border-radius: 10px;
-  box-shadow: 2px 2px 10px #0000001b;
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-.littlepicture{
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  box-shadow: 2px 2px 10px #0000001b;
-  margin: 20px;
-  border-radius: 10px;
-}
 
 /* conteneur du formulaire */
 .form-container{
@@ -223,7 +186,6 @@
   width: 900px;
   flex-grow: 1;
   margin-top: 10px;
-
 }
 
 .align-center{
@@ -242,11 +204,73 @@
   padding: 2rem;
   background-color: #faf5f0;
   width: 100%;
-  
+}
+
+/* Pages/home */
+.main-container-home {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem 8rem;
+  background-color: #faf5f0;
+}
+.audition-users {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+.block-card-home {
+  padding: 1rem 1rem;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #0000001b;
+  width: 100%;
+}
+.artists-home-card{
+  background-color: white;
+  text-align: left;
+  color: black;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #0000001b;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
 .new-audition {
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 50%);
-
 }
+.littlepicture{
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  box-shadow: 2px 2px 10px #0000001b;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+/* User/show */
+.content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+.picture-on-profile {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+.user-card-on-profile{
+  background-color: white;
+  text-align: center;
+  color: black;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #0000001b;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
