@@ -12,7 +12,7 @@
             <div class="swiper-item">
               <div class="block-card-home user-card">
                 <%= link_to user_path(user) do %>
-                  <img src="<%= user.pola_face %>" alt="Photo d'un artiste" class="swiper-image picture">
+                  <img src="<%= user.pola_face %>" alt="Photo d'un artiste" class="swiper-image picture-home">
                 <%end%>
                 <div class= "titre">
                   <%= user.first_name.capitalize %> <%= user.last_name.upcase %>
@@ -29,7 +29,9 @@
     <div class="audition-users">
       <div class="audition-container block bg-white relative">
         <div>
-          <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-black">📋 Auditions les plus récentes</h2>
+
+          <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-black mt-2 mb-4">📋 Auditions les plus récentes</h2>
+
           <ul class="auditions">
             <% @auditions.each do |audition| %>
               <%= link_to audition_path(audition) do %>

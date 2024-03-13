@@ -35,7 +35,7 @@
       </div>
 
       <!-- Add tags -->
-      <button type="button" data-action="click->tag#addField" class="rounded-full bg-white px-3 py-1.5 text-sm font-semibold text-terracotta-600 shadow-sm ring-1 ring-inset ring-terracotta-600 hover:bg-terracotta-50"> + Ajouter </button>
+      <button type="button" data-action="click->tag#addField" class="btn bg-white"> + Ajouter </button>
 
       <!-- Delete tags -->
       <button type="button" data-action="click->tag#removeField">❌</button>
@@ -54,19 +54,21 @@
       </div>
 
       <!-- Add tags -->
-      <button type="button" data-action="click->tag#addField" class="rounded-full bg-white px-3 py-1.5 text-sm font-semibold text-terracotta-600 shadow-sm ring-1 ring-inset ring-terracotta-600 hover:bg-terracotta-50"> +Ajouter </button>
+      <button type="button" data-action="click->tag#addField" class="btn bg-white"> + Ajouter </button>
 
       <!-- Delete tags -->
       <button type="button" data-action="click->tag#removeField">❌</button>
     </div>
 
     <!-- Submit -->
-    <div class="flex">
-    <%= f.submit "Soumettre", class: 'rounded-full bg-terracotta-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-terracotta-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-600 mb-4 ml-auto'%>
+
+    <div class="flex justify-end" style="padding-right: 10px;">
+    <%= f.submit "Enregistrer", class: 'btn bg-brown'%>
     </div>
   <% end %>
   <!-- Lien pour rediriger vers la page d'index après la création -->
-  <div class="flex btn bg-brown ">
-    <%= link_to 'Retour à la liste des auditions', auditions_path, class: 'text-blue-500 hover:text-blue-700 ml-auto mb-25' %>
+  <div>
+    <%= link_to 'Retour à la liste des auditions', auditions_path, class: 'btn' %>
+
   </div>
 </div>

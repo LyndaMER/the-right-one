@@ -1,6 +1,6 @@
 <%= render "components/navbar" %>
 <%# Index entier%>
-<div class="main-container">
+<div class="main-container" data-controller="search">
   <div class="flex justify-center mb-4 mt-20">
     <p class="text-4xl font-extrabold dark:text-black">Artistes</p>
   </div>
@@ -15,10 +15,10 @@
         </div>
         <%= form_with url: search_users_path, data: { search_target: "form"} do |f| %>
           <input id="search"
-                  name="search"
-                   class="search-input w-full rounded-md border-0 bg-white pl-10 pr-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-terracotta-600 sm:text-sm sm:leading-6"
-                   placeholder="Rechercher"
-                  data-action="input->search#search"
+            name="search"
+            class="search-input w-full rounded-md border-0 bg-white pl-10 pr-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-terracotta-600 sm:text-sm sm:leading-6"
+            placeholder="Rechercher"
+            data-action="input->search#search"
           type="search">
         <% end %>
       </div>
