@@ -442,9 +442,7 @@ h1 {
   display: flex;
   gap: 1rem;
   margin-top: 20px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 2px 2px 10px #0000001b;
+  background-color: #faf5f0;
   padding: 10px;
 }
 .pictures-show-user img {
