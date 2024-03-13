@@ -73,65 +73,76 @@
       <div class="user-card-on-profile">
         <%= image_tag @user.pola_face, class: "picture-on-profile" if @user.pola_face %>
 
-        <div class="mt-4">
-          <p><%= link_to"Portfolio", @user.portfolio, class: "btn bg-brown", target: "_blank" %></p>
-          <p><%= link_to"Instagram", @user.social_link, class: "btn bg-brown", target: "_blank" %></p>
-          <p><%= link_to"Présentation vidéo", @user.presentation_video, class: "btn bg-brown", target: "_blank" %></p>
+        <div class="mt-3 max-content">
+          <p><%= link_to"Portfolio", @user.portfolio, class: "btn bg-brown btn-show-artist", target: "_blank" %></p>
+          <p><%= link_to"Instagram", @user.social_link, class: "btn bg-brown btn-show-artist", target: "_blank" %></p>
+          <p><%= link_to"Présentation vidéo", @user.presentation_video, class: "btn bg-brown btn-show-artist", target: "_blank" %></p>
         </div>
       </div>
-
-    <%= link_to "Modifier le profil", edit_artist_path(@user), class: "btn bg-white" %>
-    <%= link_to "Supprimer le profil", artist_path(@user), data: { turbo_method: :delete, turbo_confirm: 'Êtes-vous sûr de vouloir supprimer ce profil?' }, class: "btn bg-brown" %>
+      <div class="flex justify-between items-center">
+        <%= link_to "Modifier le profil", edit_artist_path(@user), class: "btn bg-white" %>
+        <%= link_to "Supprimer le profil", artist_path(@user), data: { turbo_method: :delete, turbo_confirm: 'Êtes-vous sûr de vouloir supprimer ce profil?' }, class: "" %>
+      </div>
 
     </div>
   </div>
 
   <div class="middle">
     <h2>⭐ Physique</h2>
-      <table class="size-notfull">
-        <tbody>
-          <tr>
-            <th scope="row">Piercing</th>
-            <td><%= @user.piercing %></td>
-          </tr>
-          <tr>
-            <th scope="row">Couleur de cheveux</th>
-            <td><%= @user.couleur_de_cheveux %></td>
-          </tr>
-          <tr>
-            <th scope="row">Couleur des yeux</th>
-            <td><%= @user.couleur_yeux %></td>
-          </tr>
-          <tr>
-            <th scope="row">Taille</th>
-            <td><%= @user.taille %> cm</td>
-          </tr>
-          <tr>
-            <th scope="row">Taille de haut</th>
-            <td><%= @user.taille_haut %></td>
-          </tr>
-          <tr>
-            <th scope="row">Taille de bas</th>
-            <td><%= @user.taille_bas %></td>
-          </tr>
-          <tr>
-            <th scope="row">Pointure</th>
-            <td><%= @user.taille_chaussures %></td>
-          </tr>
-          <tr>
-            <th scope="row">Tour de buste</th>
-            <td><%= @user.tour_de_buste %> cm</td>
-          </tr>
-          <tr>
-            <th scope="row">Tour de taille</th>
-            <td><%= @user.tour_de_taille %> cm</td>
-          </tr>
-          <tr>
-            <th scope="row">Tour de hanches</th>
-            <td><%= @user.tour_de_hanches %> cm</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <table class="size-notfull">
+            <tbody>
+              <tr>
+                <th scope="row">Piercing</th>
+                <td><%= @user.piercing %></td>
+              </tr>
+              <tr>
+                <th scope="row">Couleur de cheveux</th>
+                <td><%= @user.couleur_de_cheveux %></td>
+              </tr>
+              <tr>
+                <th scope="row">Couleur des yeux</th>
+                <td><%= @user.couleur_yeux %></td>
+              </tr>
+              <tr>
+                <th scope="row">Pointure</th>
+                <td><%= @user.taille_chaussures %></td>
+              </tr>
+              <tr>
+                <th scope="row">Taille</th>
+                <td><%= @user.taille %> cm</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <table class="size-notfull">
+            <tbody>
+              <tr>
+                <th scope="row">Taille de haut</th>
+                <td><%= @user.taille_haut %></td>
+              </tr>
+              <tr>
+                <th scope="row">Taille de bas</th>
+                <td><%= @user.taille_bas %></td>
+              </tr>
+              <tr>
+                <th scope="row">Tour de buste</th>
+                <td><%= @user.tour_de_buste %> cm</td>
+              </tr>
+              <tr>
+                <th scope="row">Tour de taille</th>
+                <td><%= @user.tour_de_taille %> cm</td>
+              </tr>
+              <tr>
+                <th scope="row">Tour de hanches</th>
+                <td><%= @user.tour_de_hanches %> cm</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
   </div>
 
   <div class="pictures-show-user">
