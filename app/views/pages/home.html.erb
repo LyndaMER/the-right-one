@@ -5,10 +5,10 @@
     <p class="text-2xl font-extrabold dark:text-black">Bienvenue sur The Right One ! 🎬</p>
   </div>
   <div class="contain">
-    <div data-controller="carousel" class="swiper">
-      <div class="swiper-wrapper">
+    <div class="swiper" data-controller="carousel">
+      <div class="swiper-wrapper" data-controller="slide">
         <% @users.each do |user| %>
-          <div class="swiper-slide">
+          <div class="swiper-slide" data-slide-target="slide">
             <div class="swiper-item">
               <div class="block-card-home user-card">
                 <%= link_to user_path(user) do %>
@@ -31,6 +31,7 @@
         <div>
 
           <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-black mt-2 mb-4">📋 Auditions les plus récentes</h2>
+
           <ul class="auditions">
             <% @auditions.each do |audition| %>
               <%= link_to audition_path(audition) do %>
@@ -47,7 +48,6 @@
                   </div>
                 </li>
               <% end %>
-
             <% end %>
           </ul>
         </div>
@@ -61,7 +61,6 @@
         </div>
         <div class="artists-home-card flex items-center">
           <% @users.last(1).each do |user| %>
-
             <%= link_to user_path(user) do %>
               <div>
                 <img class="littlepicture" src="<%= user.pola_face %>" alt="">

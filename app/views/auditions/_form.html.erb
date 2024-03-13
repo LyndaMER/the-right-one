@@ -1,4 +1,5 @@
 <div class="form-flex">
+
 <%= form_with model: @audition, remote: true, html: { class: 'new_audition', id: 'new_audition'} do |f| %>
   <!-- Nom de l'audition -->
   <div class="mb-4">
@@ -25,7 +26,7 @@
     <div data-controller="tag" class="mb-6">
       <h3 class="text-lg font-semibold mb-2">Critères obligatoires</h3>
       <div data-tag-target="tagfields">
-        <div data-tag-target="tagTemplate" class="hidden flex mb-4">
+        <div data-tag-target="tagTemplate" class="hidden flex">
           <!-- Select tags name -->
           <%= select_tag "required_tags[name][]", options_for_select(available_tags), class: 'w-1/2 px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300 flex-row mr-2 mb-4', include_blank: true, placeholder: "Selectionner un critère"  %>
           <!-- Input tags value -->
@@ -44,7 +45,7 @@
     <div data-controller="tag" class="mb-6">
       <h3 class="text-lg font-semibold mb-2">Critères optionnels</h3>
       <div data-tag-target="tagfields">
-        <div data-tag-target="tagTemplate" class="hidden flex mb-4">
+        <div data-tag-target="tagTemplate" class="hidden">
           <!-- Select tags name -->
           <%= select_tag "optional_tags[name][]", options_for_select(available_tags), class: 'w-1/2 px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300 flex-row mr-2 mb-4', include_blank: true, placeholder: "Selectionner un critère" %>
           <!-- Input tags value -->
@@ -60,6 +61,7 @@
     </div>
 
     <!-- Submit -->
+
     <div class="flex justify-end" style="padding-right: 10px;">
     <%= f.submit "Enregistrer", class: 'btn bg-brown'%>
     </div>
@@ -67,5 +69,6 @@
   <!-- Lien pour rediriger vers la page d'index après la création -->
   <div>
     <%= link_to 'Retour à la liste des auditions', auditions_path, class: 'btn' %>
+
   </div>
 </div>
