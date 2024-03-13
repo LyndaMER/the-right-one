@@ -5,8 +5,8 @@ class PagesController < ApplicationController
   def home
     authorize current_user, policy_class: PagePolicy
     @auditions = Audition.all
-    @users = User.where.not(pola_face: nil).not_admin.shuffle
-    @lastuser = User.where.not(pola_face: nil).last(1)
+    @users = User.where.not(pola_face: nil).not_admin.first(5)
+    @last_user = User.not_admin.last(1)
   end
 
   def design_system
