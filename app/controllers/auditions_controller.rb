@@ -3,7 +3,6 @@ class AuditionsController < ApplicationController
   def index
     @auditions = policy_scope(Audition)
     @auditions = Audition.all
-
   end
 
   def show
@@ -47,6 +46,11 @@ class AuditionsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @audition = Audition.find(params[:id])
+    authorize @audition
   end
 
   def destroy
