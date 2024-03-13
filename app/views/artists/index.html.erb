@@ -3,7 +3,7 @@
   <div class="user-cards-match ">
     <% @artists.each do |artist| %>
       <% user = artist[:user] %>
-      <%= link_to user_path(user), class: " " do %>
+      <%= link_to user_path(user), class: "" do %>
         <div class="relative img-badge user-card <%= define_badge_color(artist[:matching_percentage].to_i)%>">
           <img class="picture" src="<%= user.pola_face %>" alt="" loading="lazy">
           <span class="badge"><%= artist[:matching_percentage].to_i  %>%</span>
@@ -31,7 +31,7 @@
       <h2 class="">Critères obligatoires:</h2>
       <ul>
         <% @audition.audition_tags.where(required: true).each do |audition_tag| %>
-        <li class="mb-1"><strong><%= audition_tag.tag.name %></strong>: <%= audition_tag.tag.value %></li>
+          <li class="mb-1"><strong><%= audition_tag.tag.name %></strong>: <%= audition_tag.tag.value %></li>
         <% end %>
       </ul>
     <% else %>
@@ -41,7 +41,7 @@
       <h2 class="">Critères secondaires:</h2>
       <ul>
         <% @audition.audition_tags.where(required: false).each do |audition_tag| %>
-        <li class="mb-1"><strong><%= audition_tag.tag.name %></strong>: <%= audition_tag.tag.value %></li>
+          <li class="mb-1"><strong><%= audition_tag.tag.name %></strong>: <%= audition_tag.tag.value %></li>
         <% end %>
       </ul>
     <% else %>
