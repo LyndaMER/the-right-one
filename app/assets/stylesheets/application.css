@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+:root{
+  --badge: #3d0d0d;
+}
 
 .swiper {
   position: relative;
@@ -81,8 +84,6 @@
   padding: 2rem 2rem;
   background-color: #faf5f0;
 }
-
-
 .match-container {
   display: flex;
   flex-direction: column;
@@ -94,8 +95,6 @@
   border-radius: 5px;
   max-height: 100vh;
 }
-
-
 .card-container {
   display: flex;
   flex-direction: column;
@@ -130,12 +129,10 @@
   background-color: #461111;
   color: white;
 }
-
 .bg-beige {
   background-color: #faf5f0;
   color: rgb(0, 0, 0);
 }
-
 .btn {
   border-radius: 9999px;
   width: fit-content;
@@ -167,7 +164,6 @@
   margin-bottom: 20px;
   border-radius: 10px 10px 0 0;
 }
-
 /* conteneur du formulaire */
 .form-container{
   display: flex;
@@ -198,54 +194,38 @@
   transform: translate(-50%, 50%);
 
 }
-
+.img-badge{
+  border: 2px solid var(--badge);
+}
+.img-badge .picture{
+  border-radius: 8px 8px 0 0;
+  box-shadow: none;
+}
 .badge{
-  background: linear-gradient(90deg, #ffd000 0%, #ff8c00 100%);
-  /* background-color: #fa0404; */
+  background: var(--badge);
   color: white;
+  text-align: center;
   padding: 25px 1rem;
-  border-radius: 50%;
+  border-radius: 10px;
   width: 70px;
-  height: 70px;
-  font-size: 12px;
-  font-weight:600;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 0;
-  right:0;
+  right: 0;
   transform: translate(20%, -40%);
 
 }
-.badge-silver{
-  background: linear-gradient(90deg, #656565 0%, #c6c5c5 100%);
-  /* background-color: #fa0404; */
-  color: rgb(0, 0, 0);
-  padding: 25px 1rem;
-  border-radius: 50%;
-  width: 70px;
-  height: 70px;
-  font-size: 12px;
-  font-weight:600;
-  position: absolute;
-  top: 0;
-  right:0;
-  transform: translate(20%, -40%);
-
+.silver{
+  --badge: #7d453b;
 }
-.badge-bronze{
-  background: linear-gradient(90deg, #cd7f32 0%, #d4a017 100%);
-  /* background-color: #fa0404; */
-  color: white;
-  padding: 25px 1rem;
-  border-radius: 50%;
-  width: 70px;
-  height: 70px;
-  font-size: 12px;
-  font-weight:600;
-  position: absolute;
-  top: 0;
-  right:0;
-  transform: translate(20%, -40%);
 
+.bronze{
+  --badge: #b58f7f;
 }
 
 .relative{
