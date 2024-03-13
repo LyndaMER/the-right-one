@@ -1,7 +1,7 @@
 <%= render "components/navbar" %>
 <div class="main-container-home">
   <div class="">
-    <h1 class="text-4xl font-extrabold dark:text-black">Hello Anne-Sophie,</h1>
+    <p class="text-4xl font-extrabold dark:text-black">Hello Anne-Sophie,</p>
     <p class="text-2xl font-extrabold dark:text-black">Bienvenue sur The Right One ! 🎬</p>
   </div>
   <div class="contain">
@@ -12,7 +12,7 @@
             <div class="swiper-item">
               <div class="block-card-home user-card">
                 <%= link_to user_path(user) do %>
-                <img src="<%= user.pola_face %>" alt="Photo d'un artiste" class="swiper-image picture">
+                  <img src="<%= user.pola_face %>" alt="Photo d'un artiste" class="swiper-image picture">
                 <%end%>
                 <div class= "titre">
                   <%= user.first_name.capitalize %> <%= user.last_name.upcase %>
@@ -29,29 +29,29 @@
     <div class="audition-users">
       <div class="audition-container block bg-white relative">
         <div>
-        <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-black">📋 Auditions les plus récentes</h2>
-        <ul class="auditions">
-          <% @auditions.each do |audition| %>
-            <%= link_to user_path(user) do %>
-            <li>
-              <div class="flex items-center space-x-4 rtl:space-x-reverse">
-                <div class="flex-1 min-w-0">
-                  <p class="text-sm font-medium text-gray-900 truncate dark:text-black">
-                    <%= audition.name%>
-                  </p>
-                </div>
-                <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-black">
-                  <%= audition.date %>
-                </div>
-              </div>
-            </li>
+
+          <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-black">📋 Auditions les plus récentes</h2>
+          <ul class="auditions">
+            <% @auditions.each do |audition| %>
+              <%= link_to audition_path(audition) do %>
+                <li>
+                  <div class="flex items-center space-x-4 rtl:space-x-reverse">
+                    <div class="flex-1 min-w-0">
+                      <p class="text-sm font-medium text-gray-900 truncate dark:text-black">
+                        <%= audition.name%>
+                      </p>
+                    </div>
+                    <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-black">
+                      <%= audition.date %>
+                    </div>
+                  </div>
+                </li>
+              <% end %>
+
             <% end %>
-          <% end %>
-        </ul>
-
+          </ul>
         </div>
-          <%= link_to"+ Ajouter une audition", new_audition_path, class: "btn bg-brown new-audition" %>
-
+        <%= link_to"+ Ajouter une audition", new_audition_path, class: "btn bg-brown new-audition" %>
       </div>
       <%# Bloc des artistes %>
       <div class="users-container block bg-brown">
@@ -60,18 +60,17 @@
           <%= link_to"+ Ajouter un artiste", new_artist_path, class: "btn bg-white" %>
         </div>
         <div class="artists-home-card flex items-center">
-
           <% @users.last(1).each do |user| %>
             <%= link_to user_path(user) do %>
               <div>
                 <img class="littlepicture" src="<%= user.pola_face %>" alt="">
               </div>
             <% end %>
-              <div class="">
-                <h1 class= "titre"><%= user.first_name.capitalize %> <%= user.last_name.upcase %></h1>
-                <h2><%= user.age %> ans</h2>
-                <h3><%= user.city %></h3>
-              </div>
+            <div class="">
+              <h1 class= "titre"><%= user.first_name.capitalize %> <%= user.last_name.upcase %></h1>
+              <h2><%= user.age %> ans</h2>
+              <h3><%= user.city %></h3>
+            </div>
           <% end %>
         </div>
       </div>
