@@ -29,9 +29,7 @@
     <div class="audition-users">
       <div class="audition-container block bg-white relative">
         <div>
-
           <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-black mt-2 mb-4">📋 Auditions les plus récentes</h2>
-
           <ul class="auditions">
             <% @auditions.each do |audition| %>
               <%= link_to audition_path(audition) do %>
@@ -60,7 +58,7 @@
           <%= link_to"+ Ajouter un artiste", new_artist_path, class: "btn bg-white" %>
         </div>
         <div class="artists-home-card flex items-center">
-          <% @users.last(1).each do |user| %>
+          <% @last_user.each do |user| %>
             <%= link_to user_path(user) do %>
               <div>
                 <img class="littlepicture" src="<%= user.pola_face %>" alt="">
