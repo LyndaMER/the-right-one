@@ -13,4 +13,8 @@ class UserPolicy < ApplicationPolicy
   def search?
     true
   end
+
+  def edit?
+    true
+  end
 end

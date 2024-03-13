@@ -20,4 +20,16 @@ class AuditionPolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def edit?
+    true
+  end
+
+  def update?
+    edit?
+  end
+
+  def destroy?
+    user_is_admin?
+  end
 end
