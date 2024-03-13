@@ -4,6 +4,10 @@
   <div class="flex justify-center mb-4 mt-20">
     <h1 class="text-3xl font-bold mb-6">Nouvelle Audition</h1>
   </div>
-
-  <div class="form-container bg-white"><%= render 'form' %></div>
+<div>
+    <%= link_to 'Retour à la liste des auditions', auditions_path, class: 'text-black-500 hover:text-red-700 ml-5 mr-auto flex-col' %>
+  <div class="form-container bg-white">
+    <%= render 'form' %>
+  </div>
+</div>
 </div>
