@@ -1,88 +1,89 @@
-  <div class="form-flex relative">
+<div class="form-flex relative">
   <% path = (type == :edit ? artist_path(@user) : artists_path) %>
 
   <%= form_with model: @user, url: path, data: { controller: 'user-form' } do |form| %>
   <!---Artist name ----->
-  <div class="mb-4">
-    <%= form.label :Prénom, class: 'block text-gray-700 text-sm font-bold mb-2 bg-beige' %>
-    <%= form.text_field :first_name, class: 'w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300'%>
+  <div class="m-3">
+    <%= form.label :Prénom, class: 'block text-gray-600 text-sm font-bold mb-4 bg-beige' %>
+    <%= form.text_field :first_name, class: 'testfocus italic w-full px-3 py-2 leading-tight text-gray-600 border rounded shadow appearance-none', placeholder: "Sophie" %>
   </div>
 
-  <div class="mb-4">
-    <%= form.label :Nom, class: 'block text-gray-700 text-sm font-bold mb-2 bg-beige' %>
-    <%= form.text_field :last_name, class: 'w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300' %>
+  <div class="m-3">
+    <%= form.label :Nom, class: 'block text-gray-600 text-sm font-bold mt-4 mb-4 bg-beige' %>
+    <%= form.text_field :last_name, class: 'italic w-full px-3 py-2 leading-tight text-gray-600 border rounded shadow appearance-none testfocus', placeholder: "Dupont" %>
   </div>
   <!------ Création de compte pour se connecter ----->
-  <div class="mb-4">
-    <%= form.label :email, class: 'block text-gray-700 text-sm font-bold mb-2 bg-beige' %>
-    <%= form.email_field :email, autofocus: true, class: 'w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300' %>
+  <div class="m-3">
+    <%= form.label :email, class: 'block text-gray-600 text-sm font-bold mt-4 mb-4 bg-beige' %>
+    <%= form.email_field :email, autofocus: true, class: 'italic w-full px-3 py-2 leading-tight text-gray-600 border rounded shadow appearance-none testfocus', placeholder: "nom@mail.com" %>
   </div>
 
-  <div class="mb-4">
-    <%= form.label :Mot_de_passe, class: 'block text-gray-700 text-sm font-bold mb-2 bg-beige' %>
-    <%= form.password_field :password, autocomplete: 'new-password', class: 'w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300' %>
+  <div class="m-3">
+    <%= form.label :Mot_de_passe, class: 'block text-gray-600 text-sm font-bold mt-4 mb-4 bg-beige' %>
+    <%= form.password_field :password, autocomplete: 'new-password', class: 'w-full px-3 py-2 leading-tight text-gray-600 border rounded shadow appearance-none testfocus' %>
   </div>
 
   <!---- Phone number ------>
-  <div class="mb-4">
-    <%= form.label :Téléphone, class: 'block text-gray-700 text-sm font-bold mb-2 bg-beige' %>
-    <%= form.text_field :phone_number, class: 'w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300' %>
+  <div class="m-3">
+    <%= form.label :Téléphone, class: 'block text-gray-600 text-sm font-bold mt-4 mb-4 bg-beige' %>
+    <%= form.text_field :phone_number, class: 'italic w-full px-3 py-2 leading-tight text-gray-600 border rounded shadow appearance-none testfocus', placeholder: "6 90 80 70 60" %>
+
   </div>
 
   <!---- Adresse ---->
-    <div class="mb-4">
-    <%= form.label :adresse, class: 'block text-gray-700 text-sm font-bold mb-2 bg-beige' %>
-    <%= form.text_field :address, class: 'w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300' %>
+    <div class="m-3">
+    <%= form.label :adresse, class: 'block text-gray-600 text-sm font-bold mt-4 mb-4 bg-beige' %>
+    <%= form.text_field :address, class: 'italic w-full px-3 py-2 leading-tight text-gray-600 border rounded shadow appearance-none testfocus', placeholder: "97, boulevard de Mendes 75000 Paris " %>
   </div>
 
   <!---- Date of birth ---->
-  <div class="mb-4">
-    <%= form.label :Date_de_naissance, class: 'block text-gray-700 text-sm font-bold mb-2 bg-beige' %>
-    <%= form.date_field :birth_date, class: 'w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300' %>
+  <div class="m-3">
+    <%= form.label :Date_de_naissance, class: 'block text-gray-600 text-sm font-bold mt-4 mb-4 bg-beige' %>
+    <%= form.date_field :birth_date, class: 'italic w-full px-3 py-2 leading-tight text-gray-600 border rounded shadow appearance-none testfocus' %>
   </div>
 
   <!-- créer un lien pour que l'artiste ajoute son portfolio---->
-  <div class="mb-4">
-    <%= form.label :portfolio, class: 'block text-gray-700 text-sm font-bold mb-2 bg-beige' %>
-    <%= form.text_field :portfolio, class: 'w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300', placeholder: "Lien vers votre portfolio" %>
+  <div class="m-3">
+    <%= form.label :portfolio, class: 'block text-gray-600 text-sm font-bold mt-4 mb-4 bg-beige' %>
+    <%= form.text_field :portfolio, class: 'italic w-full px-3 py-2 leading-tight text-gray-600 border rounded shadow appearance-none testfocus', placeholder: "Lien vers votre portfolio" %>
   </div>
 
   <!--- Ajouter le lien vers social-link --->
-  <div class="mb-4">
-    <%= form.label :Lien_vers_réseau_social, class: 'block text-gray-700 text-sm font-bold mb-2 bg-beige'  %>
-    <%= form.text_field :social_link, class: 'w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300' %>
+  <div class="m-3">
+    <%= form.label :Réseaux_sociaux, class: 'block text-gray-600 text-sm font-bold mt-4 mb-4 bg-beige'  %>
+    <%= form.text_field :social_link, class: 'italic w-full px-3 py-2 leading-tight text-gray-600 border rounded shadow appearance-none testfocus', placeholder: "Lien vers votre Instagram, Facebook..."  %>
   </div>
 
   <!---- Ajouter une photo ---->
-  <div class="mb-4">
-    <%= form.label :pola, class: 'block text-gray-700 text-sm font-bold mb-2 bg-beige' %>
+  <div class="m-3">
+    <%= form.label :pola, class: 'block text-gray-600 text-sm font-bold mt-4 mb-4 bg-beige' %>
 
-    <%= form.text_field :pola_face, class: 'w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300 mb-4', placeholder: "Lien vers votre pola face" %>
+    <%= form.text_field :pola_face, class: 'italic w-full px-3 py-2 leading-tight text-gray-600 border rounded shadow appearance-none testfocus m-1', placeholder: "Lien vers votre pola face" %>
 
-    <%= form.text_field :pola_3_4, class: 'w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300 mb-4', placeholder: "Lien vers votre pola 3/4" %>
+    <%= form.text_field :pola_3_4, class: 'italic w-full px-3 py-2 leading-tight text-gray-600 border rounded shadow appearance-none testfocus m-1', placeholder: "Lien vers votre pola 3/4" %>
 
-    <%= form.text_field :pola_silhouette, class: 'w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300 mb-4', placeholder: "Lien vers votre pola silhouette" %>
+    <%= form.text_field :pola_silhouette, class: 'italic w-full px-3 py-2 leading-tight text-gray-600 border rounded shadow appearance-none testfocus m-1', placeholder: "Lien vers votre pola silhouette" %>
 
-    <%= form.text_field :pola_mains, class: 'w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300 mb-4', placeholder: "Lien vers votre pola mains" %>
+    <%= form.text_field :pola_mains, class: 'italic w-full px-3 py-2 leading-tight text-gray-600 border rounded shadow appearance-none testfocus m-1', placeholder: "Lien vers votre pola mains" %>
 
-    <%= form.text_field :presentation_video, class: 'w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300 mb-4', placeholder: "Lien vers votre présentation vidéo" %>
+    <%= form.text_field :presentation_video, class: 'italic w-full px-3 py-2 leading-tight text-gray-600 border rounded shadow appearance-none testfocus m-1', placeholder: "Lien vers votre présentation vidéo" %>
   </div>
 
 
   <!--------- Required tags -------->
-  <div data-controller="tag" class="mb-6">
-    <h3 class="text-lg font-semibold mb-2">Informations</h3>
+  <div data-controller="tag" class="m-4">
+    <h3 class="text-lg font-semibold mt-4 mb-4">Informations supplémentaires</h3>
     <div data-tag-target="tagfields">
-      <div data-tag-target="tagTemplate" class="hidden flex mb-4">
+      <div data-tag-target="tagTemplate" class="hidden flex">
         <!-- Select tags name -->
-        <%= select_tag "required_tags[name][]", options_for_select(available_tags), class: 'w-1/2 px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300 flex-row mr-2 mb-4', include_blank: true, placeholder: "Selectionner un critère"  %>
+        <%= select_tag "required_tags[name][]", options_for_select(available_tags), class: 'w-1/2 px-3 py-2 leading-tight text-black-900 border rounded shadow appearance-none testfocus flex-row mb-3 mr-2', include_blank: true, placeholder: "Sélectionner un critère"  %>
         <!-- Input tags value -->
-        <input type="text" name="required_tags[value][]" class='w-1/3 px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300 flex-row mb-4'>
+        <input type="text" name="required_tags[value][]" class='align-baseline h-12 w-2/3 leading-tight text-gray-700 border rounded shadow appearance-none testfocus flex-row'>
       </div>
     </div>
 
     <!-- Add tags -->
-    <button type="button" data-action="click->tag#addField" class="rounded-full bg-white px-3 py-1.5 text-sm font-semibold text-terracotta-600 shadow-sm ring-1 ring-inset ring-terracotta-600 hover:bg-terracotta-50"> + Ajouter </button>
+    <button type="button" data-action="click->tag#addField" class="btn bg-white"> + Ajouter </button>
 
     <!-- Delete tags -->
     <button type="button" data-action="click->tag#removeField">❌</button>
@@ -93,7 +94,7 @@
   <!---- creation du profile ------>
 
   <div class="btn bg-brown form-btn">
-    <%= form.submit "Créer", class:'ml-auto' %>
+    <%= form.submit "+ Créer", class:'ml-auto' %>
   </div>
 
   <% end %>
