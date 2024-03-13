@@ -19,13 +19,14 @@
               <p><%= audition.date %></p>
               <p><%= audition.description %></p>
             </li>
+              <%= link_to "Voir le match", audition_artists_path(audition), class: "btn bg-brown mb-3 flex ml-auto" %>
           <% end %>
         </ul>
       </div>
     <% else %>
       <p class="text-gray-500">Aucune audition disponible.</p>
     <% end %>
+
   </div>
 </div>
-
 <%= render "components/footer"%>
