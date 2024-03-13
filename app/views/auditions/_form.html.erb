@@ -34,7 +34,7 @@
       </div>
 
       <!-- Add tags -->
-      <button type="button" data-action="click->tag#addField" class="rounded-full bg-white px-3 py-1.5 text-sm font-semibold text-terracotta-600 shadow-sm ring-1 ring-inset ring-terracotta-600 hover:bg-terracotta-50"> + Ajouter </button>
+      <button type="button" data-action="click->tag#addField" class="btn bg-white"> + Ajouter </button>
 
       <!-- Delete tags -->
       <button type="button" data-action="click->tag#removeField">❌</button>
@@ -53,19 +53,19 @@
       </div>
 
       <!-- Add tags -->
-      <button type="button" data-action="click->tag#addField" class="rounded-full bg-white px-3 py-1.5 text-sm font-semibold text-terracotta-600 shadow-sm ring-1 ring-inset ring-terracotta-600 hover:bg-terracotta-50"> +Ajouter </button>
+      <button type="button" data-action="click->tag#addField" class="btn bg-white"> + Ajouter </button>
 
       <!-- Delete tags -->
       <button type="button" data-action="click->tag#removeField">❌</button>
     </div>
 
     <!-- Submit -->
-    <div class="flex justify-end">
+    <div class="flex justify-end" style="padding-right: 10px;">
     <%= f.submit "Enregistrer", class: 'btn bg-brown'%>
     </div>
   <% end %>
   <!-- Lien pour rediriger vers la page d'index après la création -->
   <div>
-    <%= link_to 'Retour à la liste des auditions', auditions_path, class: 'btn bg-white' %>
+    <%= link_to 'Retour à la liste des auditions', auditions_path, class: 'btn' %>
   </div>
 </div>
