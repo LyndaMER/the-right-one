@@ -44,13 +44,20 @@ class AuditionsController < ApplicationController
       end
       redirect_to audition_artists_path(@audition), notice: "L'audition a bien été modifiée."
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
   def edit
     @audition = Audition.find(params[:id])
     authorize @audition
+  end
+
+  def update
+    @audition = Audition.find(params[:id])
+    authorize @audition
+    @audition.update(audition_params)
+    redirect_to audition_path(@audition), notice: "L'audition a bien été modifiée."
   end
 
   def destroy

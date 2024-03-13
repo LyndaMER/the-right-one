@@ -47,9 +47,8 @@
 
 
 
-      <%= link_to "Modifier", edit_audition_path(@audition), class: 'text-blue-500 hover:text-blue-700' %>
-      <%= link_to "- Supprimer", audition_path(@audition), method: :delete, data: { confirm: "Etes-vous sûre de vouloir supprimer cette audition ?" }, class: 'text-red-500 hover:text-red-700' %>
-      <%# <%= link_to "soumettre", audition_artists_path  %>
+      <%= link_to "Modifier", edit_audition_path(@audition), class: "btn bg-white" %>
+      <%= link_to "Supprimer", audition_path(@audition), data: { turbo_method: :delete, confirm: "Etes-vous sûre de vouloir supprimer cette audition ?" }, class: "btn bg-brown" %>
     </div>
   </div>
       <%= link_to "Retour à la liste des auditions", auditions_path, class: 'text-blue-500 hover:text-blue-700' %>
