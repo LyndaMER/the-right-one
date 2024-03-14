@@ -1,67 +1,49 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>The change you wanted was rejected (422)</title>
+  <head>
+  <title>Erreur(422)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+    <style>
+      .title422 {
+        color: #cf0c94;
+        text-align: center;
+        font-family: arial, sans-serif;
+        margin: 20px 0 0;
+      }
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+      .p422 {
+        font-family: arial, sans-serif;
+        text-align: center;
+        font-size: 100%;
+        color: #000000;
+        line-height: 1.5em;
+        border: 2px solid #cf0c94;
+        padding: 10px 20px;
+        margin: 25px;
+        border-radius: 10px;
+        box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+        display: block;
+      }
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+      .img422 {
+        margin: 0 0 1em;
+        padding: 1em;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
 
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
-
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-  </style>
-</head>
-
-<body class="rails-default-error-page">
-  <!-- This file lives in public/422.html -->
-  <div class="dialog">
-    <div>
-      <h1>The change you wanted was rejected.</h1>
-      <p>Maybe you tried to change something you didn't have access to.</p>
-    </div>
-    <p>If you are the application owner check the logs for more information.</p>
-  </div>
-</body>
+  <body>
+      <h1 class="text-4xl title422">Le changement que vous souhaitiez faire a ete rejete.</h1>
+      <div class="p422">
+        <p>Peut-etre avez-vous essaye de modifier quelque chose auquel vous n'aviez pas acces ou peut-etre manquez vous juste de gout.</p>
+        <p>Cliquez sur le pied de Barbie pour retablir l'ordre !</p>
+      </div>
+    <a href="javascript:history.go(-1)" class="img422">
+      <img width="200" src="https://focus.telerama.fr/2023/07/19/0/645/3120/2080/1200/0/60/0/dd5440f_1689773138313-telerama-016932-025.jpg" alt="Barbie a un problème">
+    </a>
+  </body>
 </html>
