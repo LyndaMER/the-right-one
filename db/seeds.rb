@@ -30,7 +30,7 @@ CSV.foreach('db/Annesodb.csv', headers: true, col_sep: ';') do |row|
     UserTag.create!(user: user, tag: tag)
   end
   if row['city'].present?
-    tag = Tag.find_or_create_by!(name: "city", value: row['city'].downcase)
+    tag = Tag.find_or_create_by!(name: "ville", value: row['city'].downcase)
     UserTag.create!(user: user, tag: tag)
   end
   if row['languages'].present?
@@ -38,7 +38,7 @@ CSV.foreach('db/Annesodb.csv', headers: true, col_sep: ';') do |row|
     UserTag.create!(user: user, tag: tag)
   end
   if row['origine_ethnique'].present?
-    tag = Tag.find_or_create_by!(name: "origine_ethnique", value: row['origine_ethnique'].downcase)
+    tag = Tag.find_or_create_by!(name: "origine ethnique", value: row['origine_ethnique'].downcase)
     UserTag.create!(user: user, tag: tag)
   end
   if row['sexe'].present?
@@ -58,23 +58,23 @@ CSV.foreach('db/Annesodb.csv', headers: true, col_sep: ';') do |row|
     UserTag.create!(user: user, tag: tag)
   end
   if row['permis_de_conduire'].present?
-    tag = Tag.find_or_create_by!(name: "permis_de_conduire", value: row['permis_de_conduire'].downcase)
+    tag = Tag.find_or_create_by!(name: "permis de conduire", value: row['permis_de_conduire'].downcase)
     UserTag.create!(user: user, tag: tag)
   end
   if row['couleur_de_cheveux'].present?
-    tag = Tag.find_or_create_by!(name: "couleur_de_cheveux", value: row['couleur_de_cheveux'].downcase)
+    tag = Tag.find_or_create_by!(name: "couleur de cheveux", value: row['couleur_de_cheveux'].downcase)
     UserTag.create!(user: user, tag: tag)
   end
   if row['couleur_yeux'].present?
-    tag = Tag.find_or_create_by!(name: "couleur_yeux", value: row['couleur_yeux'].downcase)
+    tag = Tag.find_or_create_by!(name: "couleur yeux", value: row['couleur_yeux'].downcase)
     UserTag.create!(user: user, tag: tag)
   end
   if row['taille_haut'].present?
-    tag = Tag.find_or_create_by!(name: "taille_haut", value: row['taille_haut'])
+    tag = Tag.find_or_create_by!(name: "taille haut", value: row['taille_haut'])
     UserTag.create!(user: user, tag: tag)
   end
   if row['taille_bas'].present?
-    tag = Tag.find_or_create_by!(name: "taille_bas", value: row['taille_bas'])
+    tag = Tag.find_or_create_by!(name: "taille bas", value: row['taille_bas'])
     UserTag.create!(user: user, tag: tag)
   end
   if row['taille'].present?
@@ -82,19 +82,19 @@ CSV.foreach('db/Annesodb.csv', headers: true, col_sep: ';') do |row|
     UserTag.create!(user: user, tag: tag)
   end
   if row['taille_chaussures'].present?
-    tag = Tag.find_or_create_by!(name: "taille_chaussures", value: row['taille_chaussures'])
+    tag = Tag.find_or_create_by!(name: "taille chaussures", value: row['taille_chaussures'])
     UserTag.create!(user: user, tag: tag)
   end
   if row['tour_de_buste'].present?
-    tag = Tag.find_or_create_by!(name: "tour_de_buste", value: row['tour_de_buste'])
+    tag = Tag.find_or_create_by!(name: "tour de buste", value: row['tour_de_buste'])
     UserTag.create!(user: user, tag: tag)
   end
   if row['tour_de_taille'].present?
-    tag = Tag.find_or_create_by!(name: "tour_de_taille", value: row['tour_de_taille'])
+    tag = Tag.find_or_create_by!(name: "tour de taille", value: row['tour_de_taille'])
     UserTag.create!(user: user, tag: tag)
   end
   if row['tour_de_hanches'].present?
-    tag = Tag.find_or_create_by!(name: "tour_de_hanches", value: row['tour_de_hanches'])
+    tag = Tag.find_or_create_by!(name: "tour de hanches", value: row['tour_de_hanches'])
     UserTag.create!(user: user, tag: tag)
   end
 end
