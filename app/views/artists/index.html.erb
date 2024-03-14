@@ -18,38 +18,31 @@
   <div class="match-container">
     <div class="titre-match">Matchs
     </div>
-    <h3 class="">Nombre d'artistes trouvés: <%= @artists.count %></h3>
+    <p class="">Nombre d'artistes trouvés: <%= @artists.count %></p>
     <hr>
-    <h1 class="">Nom de l'audition: <%= @audition.name %></h1>
+    <h1 class=""><%= @audition.name %></h1>
     <% if @audition.description.present? %>
       <h3 class="">Description de l'audition: </h3>
       <p class="mb-4"><%= @audition.description %></p>
-    <% else %>
-      <p class="mb-4">Aucune description disponible.</p>
     <% end %>
     <% if @audition.audition_tags.present? %>
-      <h2 class="">Critères obligatoires:</h2>
+      <p class=""><strong>Critères obligatoires:</strong></p>
       <ul>
         <% @audition.audition_tags.where(required: true).each do |audition_tag| %>
-          <li class="mb-1"><strong><%= audition_tag.tag.name %></strong>: <%= audition_tag.tag.value %></li>
+          <li class="mb-1"><u><%= audition_tag.tag.name %>:</u> <%= audition_tag.tag.value %></li>
         <% end %>
       </ul>
-    <% else %>
-      <p class="mb-4">Aucun critère obligatoire n'est associé à cette audition.</p>
     <% end %>
     <% if @audition.audition_tags.present? %>
-      <h2 class="">Critères secondaires:</h2>
+      <p class=""><strong>Critères secondaires:</strong></p>
       <ul>
         <% @audition.audition_tags.where(required: false).each do |audition_tag| %>
-          <li class="mb-1"><strong><%= audition_tag.tag.name %></strong>: <%= audition_tag.tag.value %></li>
+          <li class="mb-1"><u><%= audition_tag.tag.name %>:</u> <%= audition_tag.tag.value %></li>
         <% end %>
       </ul>
-    <% else %>
-      <p class="mb-4">Aucun critère secondaire n'est associé à cette audition.</p>
     <% end %>
-    <div class="flex justify-between">
-      <%= link_to "Retour", auditions_path, class: 'btn bg-white' %>
-      <%= link_to "+ Nouvelle audition", new_audition_path, class: 'btn bg-brown' %>
+    <div class="flex justify-end">
+      <%= link_to "Modifier", edit_audition_path(@audition), class: "btn bg-white mb-3" %>
     </div>
   </div>
 </div>
