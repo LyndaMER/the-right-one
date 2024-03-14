@@ -1,16 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Erreur (404)</title>
+  <title>Erreur(404)</title>
+  <style>
+    .title404 {
+      color: #730E15;
+      text-align: center;
+      font-family: arial, sans-serif;
+      margin: 20px 0 0;
+    }
+
+    .p404 {
+      font-family: arial, sans-serif;
+      text-align: center;
+      font-size: 100%;
+      color: #000000;
+      line-height: 1.5em;
+      border: 2px solid #730E15;
+      padding: 10px 20px;
+      margin: 25px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+      display: block;
+    }
+
+    .img404 {
+      margin: 0 0 1em;
+      padding: 1em;
+      display: block;
+      text-align: center;
+    }
+    </style>
 </head>
+
 <body>
-    <h1 class="text-4xl">La page que vous recherchez n'existe pas.</h1>
-    <p>Apres reformulation, reessayez votre recherche.</p>
+    <h1 class="text-4xl title404">La page que vous recherchez n'existe pas.</h1>
+    <div class="p404">
+      <p>Apres reformulation, reessayez votre recherche.</p>
+      <p> Si vous re-re-atterissez sur cette page apres 3 essais, bravo ! Vous faites preuve d'une belle pugnacite.</p>
+      <p>Pour retourner sur le site, cliquez sur ce chien sauveteur trop mignon: c'est son metier de vous ramener a bon port !</p>
     </div>
-    <p>Si vous re-atterissez sur cette page apres 3 essais, bravo ! Vous faites preuve d'une belle pugnacite.</p>
-  </div>
-  <p>Pour retourner sur le site, cliquez sur ce chien sauveteur trop mignon: c'est son metier de vous ramener a bon port !</p>
-  <a href="javascript:history.go(-1)">
+  <a href="javascript:history.go(-1)" class="img404">
     <img width="200" src="https://static.vecteezy.com/ti/photos-gratuite/p2/3616764-saint-bernard-chiot-beneficiant-d-une-gaterie-sur-fond-blanc-photo.jpg" alt="Bébé Saint-Bernard">
   </a>
 </body>
