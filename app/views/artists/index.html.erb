@@ -20,24 +20,23 @@
     </div>
     <p class="">Nombre d'artistes trouvés: <%= @artists.count %></p>
     <hr>
-    <h1 class=""><%= @audition.name %></h1>
+    <h1 class="mt-8 mb-0"><%= @audition.name %></h1>
     <% if @audition.description.present? %>
-      <h3 class="">Description de l'audition: </h3>
       <p class="mb-4"><%= @audition.description %></p>
     <% end %>
     <% if @audition.audition_tags.present? %>
-      <p class=""><strong>Critères obligatoires:</strong></p>
+      <p class=""><strong>Critères obligatoires</strong></p>
       <ul>
         <% @audition.audition_tags.where(required: true).each do |audition_tag| %>
-          <li class="mb-1"><u><%= audition_tag.tag.name %>:</u> <%= audition_tag.tag.value %></li>
+          <li class="mb-1"><span><%= audition_tag.tag.name %>:</span> <%= audition_tag.tag.value %></li>
         <% end %>
       </ul>
     <% end %>
     <% if @audition.audition_tags.present? %>
-      <p class=""><strong>Critères secondaires:</strong></p>
+      <p class=""><strong>Critères secondaires</strong></p>
       <ul>
         <% @audition.audition_tags.where(required: false).each do |audition_tag| %>
-          <li class="mb-1"><u><%= audition_tag.tag.name %>:</u> <%= audition_tag.tag.value %></li>
+          <li class="mb-1"><span><%= audition_tag.tag.name %>:</span> <%= audition_tag.tag.value %></li>
         <% end %>
       </ul>
     <% end %>

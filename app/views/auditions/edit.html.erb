@@ -1,9 +1,13 @@
 <%= render "components/navbar" %>
 
-<div class="container mx-auto">
+<div class="main-container align-center mx-auto">
   <div class="flex justify-center mb-4 mt-20">
-    <h1 class="text-4xl font-bold">Modifier une Audition</h1>
+
+    <p class="text-4xl font-bold mb-6">Modifier l'audition</p>
+
   </div>
 
-  <%= render 'form' %>
+  <div class="form-container">
+    <%= render 'form', type: :edit %>
+  </div>
 </div>
