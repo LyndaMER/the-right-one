@@ -29,8 +29,8 @@ CSV.foreach('db/Annesodb.csv', headers: true, col_sep: ';') do |row|
     tag = Tag.find_or_create_by!(name: "age", value: user.age)
     UserTag.create!(user: user, tag: tag)
   end
-  if row['ville'].present?
-    tag = Tag.find_or_create_by!(name: "ville", value: row['ville'].downcase)
+  if row['city'].present?
+    tag = Tag.find_or_create_by!(name: "ville", value: row['city'].downcase)
     UserTag.create!(user: user, tag: tag)
   end
   if row['languages'].present?
