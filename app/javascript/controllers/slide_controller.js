@@ -13,7 +13,11 @@ export default class extends Controller {
       this.element.style.transform = `translate3d(-${
         counter * widthValue
       }px, 0, 0)`;
-      counter++;
+      if (counter >= 4) {
+        counter = 0;
+      } else {
+        counter++;
+      }
     }, 5000);
   }
 }
