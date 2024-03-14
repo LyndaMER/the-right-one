@@ -11,13 +11,13 @@
 
   <%# Date de l'audition %>
   <div class="mb-4">
-    <%= f.label :date, "Date de l'audition", class: 'block text-gray-700 text-sm font-bold mb-2 bg-beige' %>
-    <%= f.text_area :date, class: 'w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300' %>
+    <%= f.label :date, class: 'block text-gray-700 text-sm font-bold mb-2 bg-beige' %>
+    <%= f.date_field :birth_date, class: 'w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300' %>
   </div>
 
   <!-- Description de l'annonce -->
   <div class="mb-6">
-    <%= f.label :description, "Description de l'audition", class: 'block text-gray-700 text-sm font-bold mb-2 bg-red' %>
+    <%= f.label :description, "Description de l'audition", class: 'block text-gray-700 text-sm font-bold mb-2 bg-beige' %>
     <%= f.text_area :description, placeholder:"Description de l'audition...", class: 'w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300' %>
   </div>
 
