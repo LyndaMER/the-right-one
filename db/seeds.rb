@@ -100,22 +100,4 @@ CSV.foreach('db/Annesodb.csv', headers: true, col_sep: ';') do |row|
 end
 
 User.create!(email:"asbaldeyroncast@gmail.com", password:"123456", first_name:"Anne-Sophie", last_name:"Baldeyron", admin: true, pola_face: "https://scontent.flyn1-1.fna.fbcdn.net/v/t39.30808-6/386765810_10231780868804807_6112603021977143620_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_ohc=iu9FEHYkz9AAX_9eMan&_nc_ht=scontent.flyn1-1.fna&oh=00_AfBdqGoACEsK8EtQq96QFmlqYCYBD2KPXqr9NeAhHkR0TQ&oe=65F49760")
-# audition = Audition.create!(
-#   name: 'Audition 1',
-#   description: 'Audition pour une nouvelle marque de collants',
-#   date: '2024-03-05',
-#   user: User.first)
-#   tag = Tag.find_or_create_by!(name: "couleur_de_cheveux", value: 'noir')
-#   AuditionTag.create!(audition: audition, tag: tag, required: true)
-#   tag = Tag.find_or_create_by!(name: "sexe", value: 'H')
-#   AuditionTag.create!(audition: audition, tag: tag, required: true)
-#   tag = Tag.find_or_create_by!(name: "taille_chaussures", value: '43')
-#   AuditionTag.create!(audition: audition, tag: tag, required: false)
-#   tag = Tag.find_or_create_by!(name: "permis_de_conduire", value: 'true')
-#   AuditionTag.create!(audition: audition, tag: tag, required: false)
-#   tag = Tag.find_or_create_by!(name: "piercing", value: 'true')
-#   AuditionTag.create!(audition: audition, tag: tag, required: false)
-#   tag = Tag.find_or_create_by!(name: "langue", value: 'français')
-#   AuditionTag.create!(audition: audition, tag: tag, required: false)
-#   tag = Tag.find_or_create_by!(name: "age", value: '25')
-#   AuditionTag.create!(audition: audition, tag: tag, required: false)
+User.create!(email:"admin@admin.com", password:"123456", first_name:"Admin", last_name:"", admin: true, pola_face: "https://scontent.flyn1-1.fna.fbcdn.net/v/t39.30808-6/332926026_8839187282822982_7674830938355777980_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=5f2048&_nc_ohc=FHr7JykADb0AX-NBC49&_nc_ht=scontent.flyn1-1.fna&cb_e2o_trans=t&oh=00_AfC4e9A5dU0gATDd_WjG9vhPs67oAaIkrSfFSZc4zDInpg&oe=65F80AE6")
