@@ -18,7 +18,7 @@
                   <%= user.first_name.capitalize %> <%= user.last_name.upcase %>
                 </div>
                 <div>
-                  <%= user.city %> - <%= user.age %> ans
+                  <%= user.age %> ans- <%= user.city %>
                 </div>
               </div>
             </div>
@@ -54,7 +54,7 @@
       <%# Bloc des artistes %>
       <div class="users-container block bg-brown">
         <div class="flex items-center justify-between">
-          <p><%= @users.count %> artistes enregistrés ⭐</p>
+          <p><%= User.count %> artistes enregistrés ⭐</p>
           <%= link_to"+ Ajouter un artiste", new_artist_path, class: "btn bg-white" %>
         </div>
         <div class="artists-home-card flex items-center">

@@ -1,11 +1,12 @@
 <%= render "components/navbar" %>
+
 <%# Index entier%>
 <div class="main-container" data-controller="search">
   <div class="flex justify-center mb-4 mt-20">
     <p class="text-4xl font-extrabold dark:text-black">Artistes</p>
   </div>
-  <%= link_to "+ Ajouter un artiste", new_artist_path, class: "btn bg-brown" %>
-  <div class="flex flex-1 items-center justify-center px-2 lg:ml-6 lg:justify-end">
+  <div class="flex flex-1 items-center justify-between search-sticky">
+  <%= link_to "+ Ajouter un artiste", new_artist_path, class: "btn bg-brown " %>
     <div class="w-full max-w-lg lg:max-w-xs">
       <div class="relative">
         <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
@@ -29,4 +30,5 @@
     <%= render "components/cards", users: @users %>
   </div>
 </div>
+
 <%= render "components/footer"%>

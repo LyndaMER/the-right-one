@@ -4,69 +4,69 @@
   <%= form_with model: @user, url: path, data: { controller: 'user-form' } do |form| %>
   <!---Artist name ----->
   <div class="m-3">
-    <%= form.label :Prénom, class: 'block text-gray-600 text-sm font-bold mb-4 bg-beige' %>
-    <%= form.text_field :first_name, class: 'testfocus italic w-full px-3 py-2 leading-tight text-gray-600 border rounded shadow appearance-none', placeholder: "Sophie" %>
+    <%= form.label :Prénom, class: 'block text-black placeholder-gray-600 text-sm font-bold mb-4 bg-beige' %>
+    <%= form.text_field :first_name, class: 'testfocus italic w-full px-3 py-2 leading-tight text-black placeholder-gray-600 border rounded shadow appearance-none', placeholder: "Sophie" %>
   </div>
 
   <div class="m-3">
-    <%= form.label :Nom, class: 'block text-gray-600 text-sm font-bold mt-4 mb-4 bg-beige' %>
-    <%= form.text_field :last_name, class: 'italic w-full px-3 py-2 leading-tight text-gray-600 border rounded shadow appearance-none testfocus', placeholder: "Dupont" %>
+    <%= form.label :Nom, class: 'block text-black placeholder-gray-600 text-sm font-bold mt-4 mb-4 bg-beige' %>
+    <%= form.text_field :last_name, class: 'italic w-full px-3 py-2 leading-tight text-black placeholder-gray-600 border rounded shadow appearance-none testfocus', placeholder: "Dupont" %>
   </div>
   <!------ Création de compte pour se connecter ----->
   <div class="m-3">
-    <%= form.label :email, class: 'block text-gray-600 text-sm font-bold mt-4 mb-4 bg-beige' %>
-    <%= form.email_field :email, autofocus: true, class: 'italic w-full px-3 py-2 leading-tight text-gray-600 border rounded shadow appearance-none testfocus', placeholder: "nom@mail.com" %>
+    <%= form.label :email, class: 'block text-black placeholder-gray-600 text-sm font-bold mt-4 mb-4 bg-beige' %>
+    <%= form.email_field :email, autofocus: true, class: 'italic w-full px-3 py-2 leading-tight text-black placeholder-gray-600 border rounded shadow appearance-none testfocus', placeholder: "nom@mail.com" %>
   </div>
 
   <div class="m-3">
-    <%= form.label :Mot_de_passe, class: 'block text-gray-600 text-sm font-bold mt-4 mb-4 bg-beige' %>
-    <%= form.password_field :password, autocomplete: 'new-password', class: 'w-full px-3 py-2 leading-tight text-gray-600 border rounded shadow appearance-none testfocus' %>
+    <%= form.label :Mot_de_passe, class: 'block text-black placeholder-gray-600 text-sm font-bold mt-4 mb-4 bg-beige' %>
+    <%= form.password_field :password, autocomplete: 'new-password', class: 'w-full px-3 py-2 leading-tight text-black placeholder-gray-600 border rounded shadow appearance-none testfocus' %>
   </div>
 
   <!---- Phone number ------>
   <div class="m-3">
-    <%= form.label :Téléphone, class: 'block text-gray-600 text-sm font-bold mt-4 mb-4 bg-beige' %>
-    <%= form.text_field :phone_number, class: 'italic w-full px-3 py-2 leading-tight text-gray-600 border rounded shadow appearance-none testfocus', placeholder: "6 90 80 70 60" %>
+    <%= form.label :Téléphone, class: 'block text-black placeholder-gray-600 text-sm font-bold mt-4 mb-4 bg-beige' %>
+    <%= form.text_field :phone_number, class: 'italic w-full px-3 py-2 leading-tight text-black placeholder-gray-600 border rounded shadow appearance-none testfocus', placeholder: "6 90 80 70 60" %>
 
   </div>
 
   <!---- Adresse ---->
     <div class="m-3">
-    <%= form.label :adresse, class: 'block text-gray-600 text-sm font-bold mt-4 mb-4 bg-beige' %>
-    <%= form.text_field :address, class: 'italic w-full px-3 py-2 leading-tight text-gray-600 border rounded shadow appearance-none testfocus', placeholder: "97, boulevard de Mendes 75000 Paris " %>
+    <%= form.label :adresse, class: 'block text-black placeholder-gray-600 text-sm font-bold mt-4 mb-4 bg-beige' %>
+    <%= form.text_field :address, class: 'italic w-full px-3 py-2 leading-tight text-black placeholder-gray-600 border rounded shadow appearance-none testfocus', placeholder: "97, boulevard de Mendes 75000 Paris " %>
   </div>
 
   <!---- Date of birth ---->
   <div class="m-3">
-    <%= form.label :Date_de_naissance, class: 'block text-gray-600 text-sm font-bold mt-4 mb-4 bg-beige' %>
-    <%= form.date_field :birth_date, class: 'italic w-full px-3 py-2 leading-tight text-gray-600 border rounded shadow appearance-none testfocus' %>
+    <%= form.label :Date_de_naissance, class: 'block text-black placeholder-gray-600 text-sm font-bold mt-4 mb-4 bg-beige' %>
+    <%= form.date_field :birth_date, class: 'italic w-full px-3 py-2 leading-tight text-black placeholder-gray-600 border rounded shadow appearance-none testfocus' %>
   </div>
 
   <!-- créer un lien pour que l'artiste ajoute son portfolio---->
   <div class="m-3">
-    <%= form.label :portfolio, class: 'block text-gray-600 text-sm font-bold mt-4 mb-4 bg-beige' %>
-    <%= form.text_field :portfolio, class: 'italic w-full px-3 py-2 leading-tight text-gray-600 border rounded shadow appearance-none testfocus', placeholder: "Lien vers votre portfolio" %>
+    <%= form.label :portfolio, class: 'block text-black placeholder-gray-600 text-sm font-bold mt-4 mb-4 bg-beige' %>
+    <%= form.text_field :portfolio, class: 'italic w-full px-3 py-2 leading-tight text-black placeholder-gray-600 border rounded shadow appearance-none testfocus', placeholder: "Lien vers votre portfolio" %>
   </div>
 
   <!--- Ajouter le lien vers social-link --->
   <div class="m-3">
-    <%= form.label :Réseaux_sociaux, class: 'block text-gray-600 text-sm font-bold mt-4 mb-4 bg-beige'  %>
-    <%= form.text_field :social_link, class: 'italic w-full px-3 py-2 leading-tight text-gray-600 border rounded shadow appearance-none testfocus', placeholder: "Lien vers votre Instagram, Facebook..."  %>
+    <%= form.label :Réseaux_sociaux, class: 'block text-black placeholder-gray-600 text-sm font-bold mt-4 mb-4 bg-beige'  %>
+    <%= form.text_field :social_link, class: 'italic w-full px-3 py-2 leading-tight text-black placeholder-gray-600 border rounded shadow appearance-none testfocus', placeholder: "Lien vers votre Instagram, Facebook..."  %>
   </div>
 
   <!---- Ajouter une photo ---->
   <div class="m-3">
-    <%= form.label :pola, class: 'block text-gray-600 text-sm font-bold mt-4 mb-4 bg-beige' %>
+    <%= form.label :pola, class: 'block text-black placeholder-gray-600 text-sm font-bold mt-4 mb-4 bg-beige' %>
 
-    <%= form.text_field :pola_face, class: 'italic w-full px-3 py-2 leading-tight text-gray-600 border rounded shadow appearance-none testfocus m-1', placeholder: "Lien vers votre pola face" %>
+    <%= form.text_field :pola_face, class: 'italic w-full px-3 py-2 leading-tight text-black placeholder-gray-600 border rounded shadow appearance-none testfocus m-1', placeholder: "Lien vers votre pola face" %>
 
-    <%= form.text_field :pola_3_4, class: 'italic w-full px-3 py-2 leading-tight text-gray-600 border rounded shadow appearance-none testfocus m-1', placeholder: "Lien vers votre pola 3/4" %>
+    <%= form.text_field :pola_3_4, class: 'italic w-full px-3 py-2 leading-tight text-black placeholder-gray-600 border rounded shadow appearance-none testfocus m-1', placeholder: "Lien vers votre pola 3/4" %>
 
-    <%= form.text_field :pola_silhouette, class: 'italic w-full px-3 py-2 leading-tight text-gray-600 border rounded shadow appearance-none testfocus m-1', placeholder: "Lien vers votre pola silhouette" %>
+    <%= form.text_field :pola_silhouette, class: 'italic w-full px-3 py-2 leading-tight text-black placeholder-gray-600 border rounded shadow appearance-none testfocus m-1', placeholder: "Lien vers votre pola silhouette" %>
 
-    <%= form.text_field :pola_mains, class: 'italic w-full px-3 py-2 leading-tight text-gray-600 border rounded shadow appearance-none testfocus m-1', placeholder: "Lien vers votre pola mains" %>
+    <%= form.text_field :pola_mains, class: 'italic w-full px-3 py-2 leading-tight text-black placeholder-gray-600 border rounded shadow appearance-none testfocus m-1', placeholder: "Lien vers votre pola mains" %>
 
-    <%= form.text_field :presentation_video, class: 'italic w-full px-3 py-2 leading-tight text-gray-600 border rounded shadow appearance-none testfocus m-1', placeholder: "Lien vers votre présentation vidéo" %>
+    <%= form.text_field :presentation_video, class: 'italic w-full px-3 py-2 leading-tight text-black placeholder-gray-600 border rounded shadow appearance-none testfocus m-1', placeholder: "Lien vers votre présentation vidéo" %>
   </div>
 
 
