@@ -1,10 +1,8 @@
 <%= render "components/navbar" %>
-
 <div class="main-container-home">
   <div class="flex justify-center mb-4 mt-20">
     <p class="text-4xl font-extrabold dark:text-black"><%= @user.first_name.capitalize %> <%= @user.last_name.upcase %></p>
   </div>
-
   <div class="content">
     <div class="left">
       <div>
@@ -33,46 +31,45 @@
         </div>
         <div>
           <h2>💬 Informations</h2>
-            <table class="size-full" style="width:100%">
-              <tbody>
-                <tr>
-                  <th scope="row" style="width:50%">Sexe</th>
-                  <td><%= @user.sexe %></td>
-                </tr>
-                <tr>
-                  <th scope="row" style="width:50%">Date de naissance</th>
-                  <td><%= @user.birth_date %></td>
-                </tr>
-                <tr>
-                  <th scope="row" style="width:50%">Langues parlées</th>
-                  <td><%= @user.languages %></td>
-                </tr>
-                <tr>
-                  <th scope="row" style="width:50%">Permis de conduire</th>
-                  <td><%= @user.permis_de_conduire %></td>
-                </tr>
-              </tbody>
-            </table>
+          <table class="size-full" style="width:100%">
+            <tbody>
+              <tr>
+                <th scope="row" style="width:50%">Sexe</th>
+                <td><%= @user.sexe %></td>
+              </tr>
+              <tr>
+                <th scope="row" style="width:50%">Date de naissance</th>
+                <td><%= @user.birth_date %></td>
+              </tr>
+              <tr>
+                <th scope="row" style="width:50%">Langues parlées</th>
+                <td><%= @user.languages %></td>
+              </tr>
+              <tr>
+                <th scope="row" style="width:50%">Permis de conduire</th>
+                <td><%= @user.permis_de_conduire %></td>
+              </tr>
+            </tbody>
+          </table>
           <h2>🥇 Compétences</h2>
-            <table class="size-full" style="width:100%">
-              <tbody>
-                <tr>
-                  <th scope="row" style="width:50%">Sport</th>
-                  <td><%= @user.sport %></td>
-                </tr>
-                <tr>
-                  <th scope="row" style="width:50%">Musique</th>
-                  <td><%= @user.musique %></td>
-                </tr>
-              </tbody>
-            </table>
+          <table class="size-full" style="width:100%">
+            <tbody>
+              <tr>
+                <th scope="row" style="width:50%">Sport</th>
+                <td><%= @user.sport %></td>
+              </tr>
+              <tr>
+                <th scope="row" style="width:50%">Musique</th>
+                <td><%= @user.musique %></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
     <div class="right">
       <div class="user-card mb-4">
         <%= image_tag @user.pola_face, class: "picture" if @user.pola_face %>
-
         <div class="max-content pb-1 pr-14 pl-14">
           <p><%= link_to"Portfolio", @user.portfolio, class: "btn bg-brown btn-show-artist", target: "_blank" %></p>
           <p><%= link_to"Instagram", @user.social_link, class: "btn bg-brown btn-show-artist", target: "_blank" %></p>
@@ -83,68 +80,65 @@
         <%= link_to "Modifier le profil", edit_artist_path(@user), class: "btn bg-white" %>
         <%= link_to "Supprimer le profil", artist_path(@user), data: { turbo_method: :delete, turbo_confirm: 'Êtes-vous sûr de vouloir supprimer ce profil?' }, class: "" %>
       </div>
-
     </div>
   </div>
-
   <div class="middle">
     <h2>⭐ Physique</h2>
-      <div class="grid grid-cols-2 gap-4">
-        <div>
-          <table class="size-notfull" style="width:100%">
-            <tbody>
-              <tr>
-                <th scope="row" style="width:60%">Piercing</th>
-                <td><%= @user.piercing %></td>
-              </tr>
-              <tr>
-                <th scope="row" style="width:60%">Couleur de cheveux</th>
-                <td><%= @user.couleur_de_cheveux %></td>
-              </tr>
-              <tr>
-                <th scope="row" style="width:60%">Couleur des yeux</th>
-                <td><%= @user.couleur_yeux %></td>
-              </tr>
-              <tr>
-                <th scope="row" style="width:60%">Pointure</th>
-                <td><%= @user.taille_chaussures %></td>
-              </tr>
-              <tr>
-                <th scope="row" style="width:60%">Taille</th>
-                <td><%= @user.taille %> cm</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div>
-          <table class="size-notfull">
-            <tbody>
-              <tr>
-                <th scope="row" style="width:60%">Taille de haut</th>
-                <td><%= @user.taille_haut %></td>
-              </tr>
-              <tr>
-                <th scope="row" style="width:60%">Taille de bas</th>
-                <td><%= @user.taille_bas %></td>
-              </tr>
-              <tr>
-                <th scope="row" style="width:60%">Tour de buste</th>
-                <td><%= @user.tour_de_buste %></td>
-              </tr>
-              <tr>
-                <th scope="row" style="width:60%">Tour de taille</th>
-                <td><%= @user.tour_de_taille %></td>
-              </tr>
-              <tr>
-                <th scope="row" style="width:60%">Tour de hanches</th>
-                <td><%= @user.tour_de_hanches %></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+    <div class="grid grid-cols-2 gap-4">
+      <div>
+        <table class="size-notfull" style="width:100%">
+          <tbody>
+            <tr>
+              <th scope="row" style="width:60%">Piercing</th>
+              <td><%= @user.piercing %></td>
+            </tr>
+            <tr>
+              <th scope="row" style="width:60%">Couleur de cheveux</th>
+              <td><%= @user.hair_color %></td>
+            </tr>
+            <tr>
+              <th scope="row" style="width:60%">Couleur des yeux</th>
+              <td><%= @user.eye_color %></td>
+            </tr>
+            <tr>
+              <th scope="row" style="width:60%">Pointure</th>
+              <td><%= @user.taille_chaussures %></td>
+            </tr>
+            <tr>
+              <th scope="row" style="width:60%">Taille</th>
+              <td><%= @user.taille %> cm</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
+      <div>
+        <table class="size-notfull">
+          <tbody>
+            <tr>
+              <th scope="row" style="width:60%">Taille de haut</th>
+              <td><%= @user.taille_haut %></td>
+            </tr>
+            <tr>
+              <th scope="row" style="width:60%">Taille de bas</th>
+              <td><%= @user.taille_bas %></td>
+            </tr>
+            <tr>
+              <th scope="row" style="width:60%">Tour de buste</th>
+              <td><%= @user.tour_de_buste %></td>
+            </tr>
+            <tr>
+              <th scope="row" style="width:60%">Tour de taille</th>
+              <td><%= @user.tour_de_taille %></td>
+            </tr>
+            <tr>
+              <th scope="row" style="width:60%">Tour de hanches</th>
+              <td><%= @user.tour_de_hanches %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
-
   <div class="pictures-show-user">
     <% if @user.pola_3_4.present? %>
       <img src="<%= @user.pola_3_4 %>" alt="pola 3/4">
@@ -157,7 +151,4 @@
     <% end %>
   </div>
 </div>
-
-
-
 <%= render "components/footer"%>

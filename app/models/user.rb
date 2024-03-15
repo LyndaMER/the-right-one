@@ -12,23 +12,19 @@ class User < ApplicationRecord
   validates :first_name, presence: true
 
   def taille_chaussures
-    tags.find_by(name: "taille_chaussures")&.value
-  end
-
-  def couleur_cheveux
-    tags.find_by(name: "couleur_cheveux")&.value
+    tags.find_by(name: "taille chaussures")&.value
   end
 
   def sexe
-    tags.find_by(name: "sexe")&.value
+    tags.find_by(name: "sexe")&.value&.capitalize
   end
 
   def permis_de_conduire
-    tags.find_by(name: "permis_de_conduire")&.value
+    tags.find_by(name: "permis de conduire")&.value&.capitalize || "/"
   end
 
   def piercing
-    tags.find_by(name: "piercing")&.value
+    tags.find_by(name: "piercing")&.value&.capitalize || "/"
   end
 
   def langues
@@ -36,19 +32,19 @@ class User < ApplicationRecord
   end
 
   def sport
-    tags.find_by(name: "sport")&.value
+    tags.find_by(name: "sport")&.value&.capitalize || "/"
   end
 
   def musique
-    tags.find_by(name: "musique")&.value
+    tags.find_by(name: "musique")&.value || "/"
   end
 
-  def couleur_de_cheveux
-    tags.find_by(name: "couleur_de_cheveux")&.value
+  def hair_color
+    tags.find_by(name: "couleur de cheveux")&.value&.capitalize
   end
 
-  def couleur_yeux
-    tags.find_by(name: "couleur_yeux")&.value
+  def eye_color
+    tags.find_by(name: "couleur yeux")&.value&.capitalize
   end
 
   def taille
@@ -56,23 +52,23 @@ class User < ApplicationRecord
   end
 
   def taille_haut
-    tags.find_by(name: "taille_haut")&.value
+    tags.find_by(name: "taille haut")&.value
   end
 
   def taille_bas
-    tags.find_by(name: "taille_bas")&.value
+    tags.find_by(name: "taille bas")&.value
   end
 
   def tour_de_buste
-    tags.find_by(name: "tour_de_buste")&.value
+    tags.find_by(name: "tour de buste")&.value
   end
 
   def tour_de_taille
-    tags.find_by(name: "tour_de_taille")&.value
+    tags.find_by(name: "tour de taille")&.value
   end
 
   def tour_de_hanches
-    tags.find_by(name: "tour_de_hanches")&.value
+    tags.find_by(name: "tour de hanches")&.value
   end
 
   def age()
