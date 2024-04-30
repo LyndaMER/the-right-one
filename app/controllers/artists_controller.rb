@@ -1,6 +1,7 @@
 class ArtistsController < ApplicationController
   skip_after_action :verify_policy_scoped
   skip_after_action :verify_authorized
+  before_action :artist_params, only: [:create, :edit]
 
   def index
     @audition = Audition.find(params[:audition_id])

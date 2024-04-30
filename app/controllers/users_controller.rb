@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   skip_after_action :verify_authorized, only: [:search]
+  before_action :user_params, only: [:create, :edit]
 
   def index
     @users = policy_scope(User)

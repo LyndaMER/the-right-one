@@ -1,49 +1,49 @@
-<nav class="bg-terracotta-50 shadow nav">
-  <div class="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
-    <div class="flex h-16 justify-between">
+<nav class="shadow bg-terracotta-50 nav">
+  <div class="px-2 mx-auto max-w-7xl sm:px-4 lg:px-8">
+    <div class="flex justify-between h-16">
       <div class="flex px-2 lg:px-0">
-        <div class="flex flex-shrink-0 items-center">
+        <div class="flex items-center flex-shrink-0">
           <%= image_tag "LogoFinal.png", alt:"Logo", class:"h-8 w-auto" %>
         </div>
         <%#Liste des pages qu'on peut voir dans le menu%>
         <div class="hidden lg:ml-6 lg:flex lg:space-x-8">
           <%= link_to root_path, class: 'inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-black hover:border-terracotta-500 hover:text-gray-700' do %> Accueil <% end %>
-          <a href="/users" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-black hover:border-terracotta-500 hover:text-gray-700">Artistes</a>
-          <a href="/auditions" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-black hover:border-terracotta-500 hover:text-gray-700">Auditions</a>
+          <a href="/users" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-black border-b-2 border-transparent hover:border-terracotta-500 hover:text-gray-700">Artistes</a>
+          <a href="/auditions" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-black border-b-2 border-transparent hover:border-terracotta-500 hover:text-gray-700">Auditions</a>
         </div>
       </div>
       <%#menu déroulant%>
       <div class="flex items-center lg:hidden">
         <!-- Mobile menu button -->
-        <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-terracotta-500" aria-controls="mobile-menu" aria-expanded="false">
+        <button type="button" class="relative inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-terracotta-500" aria-controls="mobile-menu" aria-expanded="false">
           <span class="absolute -inset-0.5"></span>
           <span class="sr-only">Ouvrir le menu déroulant</span>
           <!-- Menu déroulant fermé-->
-          <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <svg class="block w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
           </svg>
           <!--Menu déroulant ouvert -->
-          <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <svg class="hidden w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
       </div>
       <div class="hidden lg:ml-4 lg:flex lg:items-center">
-        <div class="relative ml-4 flex-shrink-0 group">
+        <div class="relative flex-shrink-0 ml-4 group">
           <div>
-            <button type="button" class="relative flex rounded-full text-sm" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+            <button type="button" class="relative flex text-sm rounded-full" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
               <span class="absolute -inset-1.5"></span>
               <span class="sr-only">Ouvrir le menu déroulant</span>
               <% if current_user.pola_face %>
                 <%= image_tag current_user.pola_face, class:"h-8 w-8 rounded-full", alt:"Photo de profil"%>
               <%else%>
-                <div class="h-8 w-8 rounded-full bg-gray-300">
+                <div class="w-8 h-8 bg-gray-300 rounded-full">
                 </div>
               <%end%>
             </button>
           </div>
           <!-- Menu déroulant -->
-          <div class="delay-200 bg-white absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md focus:outline-none hidden group-hover:block" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+          <div class="absolute right-0 z-10 hidden w-48 mt-2 delay-200 origin-top-right bg-white rounded-md focus:outline-none group-hover:block" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
             <!-- Active: "bg-gray-100", Not Active: "" -->
             <%# link_to 'Mon profil', edit_user_registration_path, class: 'block px-4 py-2 text-sm text-gray-700 hover:bg-terracotta-100' %>
             <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, class: 'block px-4 py-2 text-sm text-gray-700 hover:bg-terracotta-100', 'data-turbo-method' => 'delete', role: 'menuitem', tabindex: '-1', id: 'user-menu-item-2' %>
@@ -55,18 +55,18 @@
   <%#sur le téléphone%>
   <!-- Mobile menu, show/hide based on menu state. -->
   <div class="lg:hidden" id="mobile-menu">
-    <div class="space-y-1 pb-3 pt-2">
+    <div class="pt-2 pb-3 space-y-1">
       <!-- Current: "bg-terracotta-50 border-terracotta-500 text-terracotta-700", Default: "border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800" -->
       <%= link_to root_path, class: 'inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-black hover:border-terracotta-500 hover:text-gray-700' do %> Accueil <% end %>
-      <a href="/users" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-black hover:border-terracotta-500 hover:text-gray-700">Artistes</a>
-      <a href="/auditions" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-black hover:border-terracotta-500 hover:text-gray-700">Auditions</a>
-      <div class="border-t border-gray-200 pb-3 pt-4">
+      <a href="/users" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-black border-b-2 border-transparent hover:border-terracotta-500 hover:text-gray-700">Artistes</a>
+      <a href="/auditions" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-black border-b-2 border-transparent hover:border-terracotta-500 hover:text-gray-700">Auditions</a>
+      <div class="pt-4 pb-3 border-t border-gray-200">
         <div class="flex items-center px-4">
           <div class="flex-shrink-0">
             <% if current_user.pola_face %>
               <%= image_tag current_user.pola_face, class:"h-8 w-8 rounded-full", alt:"Photo de profil"%>
             <%else%>
-              <div class="h-8 w-8 rounded-full bg-gray-300">
+              <div class="w-8 h-8 bg-gray-300 rounded-full">
               </div>
             <%end%>
           </div>
