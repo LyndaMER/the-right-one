@@ -20,7 +20,7 @@ class ArtistsController < ApplicationController
           value = params[:required_tags][:value][index.to_i]
           next if value.blank?
           tag = Tag.find_or_create_by(name: tag_name, value: value.downcase)
-          UserTag.create(user: @user, tag: tag, required: true)
+          UserTag.create(user: @user, tag: tag, required: false)
         end
       end
 
@@ -63,7 +63,7 @@ class ArtistsController < ApplicationController
   private
 
   def artist_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :address, :phone_number, :birth_date, :pola_face, :portfolio, :social_link, :required_tags)
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :address, :phone_number, :birth_date, :pola_face, :portfolio, :social_link, :required_tags, :pola_3_4, :pola_mains, :pola_silhouette,:presentation_video)
   end
 
 end
